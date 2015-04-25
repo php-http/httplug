@@ -1,0 +1,72 @@
+<?php
+
+/*
+ * This file is part of the Http Adapter package.
+ *
+ * (c) Eric GELOEN <geloen.eric@gmail.com>
+ *
+ * For the full copyright and license information, please read the LICENSE
+ * file that was distributed with this source code.
+ */
+
+namespace Http\Adapter;
+
+use Http\Adapter\ConfigurationInterface;
+use Psr\Http\Message\RequestInterface;
+use Psr\Http\Message\ResponseInterface;
+
+/**
+ * @author GeLo <geloen.eric@gmail.com>
+ */
+interface PsrHttpAdapterInterface
+{
+    const VERSION = '0.1.0-DEV';
+    const VERSION_ID = '00100';
+    const MAJOR_VERSION = '0';
+    const MINOR_VERSION = '1';
+    const PATCH_VERSION = '0';
+    const EXTRA_VERSION = 'DEV';
+
+    /**
+     * Returns the configuration
+     *
+     * @return ConfigurationInterface
+     */
+    public function getConfiguration();
+
+    /**
+     * Sets the configuration
+     *
+     * @param ConfigurationInterface $configuration
+     */
+    public function setConfiguration(ConfigurationInterface $configuration);
+
+    /**
+     * Sends a PSR request
+     *
+     * @param RequestInterface $request
+     *
+     * @return ResponseInterface
+     *
+     * @throws HttpAdapterException If an error occurred.
+     */
+    public function sendRequest(RequestInterface $request);
+
+    /**
+     * Sends PSR requests
+     *
+     * @param RequestInterface[] $requests
+     *
+     * @return ResponseInterface[]
+     *
+     * @throws MultiHttpAdapterException If an error occurred when you don't provide the error callable.
+     */
+    public function sendRequests(array $requests);
+
+    /**
+     * Returns the name
+     *
+     * @return string
+     */
+    public function getName();
+}
