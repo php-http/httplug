@@ -19,18 +19,11 @@ interface InternalRequestInterface extends RequestInterface
     /**
      * Returns some data by name
      *
-     * @param string $name
+     * @param string|null $name
      *
      * @return mixed
      */
-    public function getData($name);
-
-    /**
-     * Returns the data
-     *
-     * @return array
-     */
-    public function getDatas();
+    public function getData($name = null);
 
     /**
      * Checks if the data exists

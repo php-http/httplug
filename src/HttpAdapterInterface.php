@@ -57,70 +57,70 @@ interface HttpAdapterInterface extends PsrHttpAdapterInterface
      *
      * @param string|object $uri
      * @param array         $headers
-     * @param array|string  $datas
+     * @param array|string  $data
      * @param array         $files
      *
      * @throws HttpAdapterException If an error occurred.
      *
      * @return ResponseInterface
      */
-    public function post($uri, array $headers = [], $datas = [], array $files = []);
+    public function post($uri, array $headers = [], $data = [], array $files = []);
 
     /**
      * Sends a PUT request.
      *
      * @param string|object $uri
      * @param array         $headers
-     * @param array|string  $datas
+     * @param array|string  $data
      * @param array         $files
      *
      * @throws HttpAdapterException If an error occurred.
      *
      * @return ResponseInterface
      */
-    public function put($uri, array $headers = [], $datas = [], array $files = []);
+    public function put($uri, array $headers = [], $data = [], array $files = []);
 
     /**
      * Sends a PATCH request.
      *
      * @param string|object $uri
      * @param array         $headers
-     * @param array|string  $datas
+     * @param array|string  $data
      * @param array         $files
      *
      * @throws HttpAdapterException If an error occurred.
      *
      * @return ResponseInterface
      */
-    public function patch($uri, array $headers = [], $datas = [], array $files = []);
+    public function patch($uri, array $headers = [], $data = [], array $files = []);
 
     /**
      * Sends a DELETE request.
      *
      * @param string|object $uri
      * @param array         $headers
-     * @param array|string  $datas
+     * @param array|string  $data
      * @param array         $files
      *
      * @throws HttpAdapterException If an error occurred.
      *
      * @return ResponseInterface
      */
-    public function delete($uri, array $headers = [], $datas = [], array $files = []);
+    public function delete($uri, array $headers = [], $data = [], array $files = []);
 
     /**
      * Sends an OPTIONS request.
      *
      * @param string|object $uri
      * @param array         $headers
-     * @param array|string  $datas
+     * @param array|string  $data
      * @param array         $files
      *
      * @throws HttpAdapterException If an error occurred.
      *
      * @return ResponseInterface
      */
-    public function options($uri, array $headers = [], $datas = [], array $files = []);
+    public function options($uri, array $headers = [], $data = [], array $files = []);
 
     /**
      * Sends a request.
@@ -128,12 +128,12 @@ interface HttpAdapterInterface extends PsrHttpAdapterInterface
      * @param string|object $uri
      * @param string        $method
      * @param array         $headers
-     * @param array|string  $datas
+     * @param array|string  $data
      * @param array         $files
      *
      * @throws HttpAdapterException If an error occurred.
      *
      * @return ResponseInterface
      */
-    public function send($uri, $method, array $headers = [], $datas = [], array $files = []);
+    public function send($uri, $method, array $headers = [], $data = [], array $files = []);
 }

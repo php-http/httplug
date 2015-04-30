@@ -71,7 +71,7 @@ interface MessageFactoryInterface
      * @param string              $method
      * @param string              $protocolVersion
      * @param array               $headers
-     * @param array|string        $datas
+     * @param array|string        $data
      * @param array               $files
      * @param array               $parameters
      *
@@ -82,7 +82,7 @@ interface MessageFactoryInterface
         $method = RequestInterface::METHOD_GET,
         $protocolVersion = RequestInterface::PROTOCOL_VERSION_1_1,
         array $headers = [],
-        $datas = [],
+        $data = [],
         array $files = [],
         array $parameters = []
     );
