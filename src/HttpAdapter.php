@@ -11,10 +11,12 @@
 
 namespace Http\Adapter;
 
+use Psr\Http\Message\ResponseInterface;
+
 /**
  * @author GeLo <geloen.eric@gmail.com>
  */
-interface HttpAdapterInterface extends PsrHttpAdapterInterface
+interface HttpAdapter extends PsrHttpAdapter
 {
     /**
      * Sends a GET request

@@ -17,7 +17,7 @@ use Psr\Http\Message\ResponseInterface;
 /**
  * @author GeLo <geloen.eric@gmail.com>
  */
-interface PsrHttpAdapterInterface
+interface PsrHttpAdapter
 {
     /**
      * Sends a PSR request
