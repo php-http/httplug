@@ -39,7 +39,7 @@ interface MessageFactoryInterface
      *
      * @param null|string|UriInterface $baseUri
      *
-     * @throws HttpAdapterException If the base uri is invalid.
+     * @throws \InvalidArgumentException If the base uri is invalid.
      */
     public function setBaseUri($baseUri);
 

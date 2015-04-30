@@ -37,7 +37,7 @@ interface PsrHttpAdapter
      *
      * @return ResponseInterface[]
      *
-     * @throws MultiHttpAdapterException If an error occurred when you don't provide the error callable.
+     * @throws MultiHttpAdapterException If an error occurred.
      */
     public function sendRequests(array $requests);
 
