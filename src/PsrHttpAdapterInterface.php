@@ -19,13 +19,6 @@ use Psr\Http\Message\ResponseInterface;
  */
 interface PsrHttpAdapterInterface
 {
-    const VERSION = '0.1.0-DEV';
-    const VERSION_ID = '00100';
-    const MAJOR_VERSION = '0';
-    const MINOR_VERSION = '1';
-    const PATCH_VERSION = '0';
-    const EXTRA_VERSION = 'DEV';
-
     /**
      * Sends a PSR request
      *
