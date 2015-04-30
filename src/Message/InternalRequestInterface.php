@@ -21,7 +21,7 @@ interface InternalRequestInterface extends RequestInterface
      *
      * @param string $name
      *
-     * @return mixed
+     * @return string|array
      */
     public function getData($name);
 
