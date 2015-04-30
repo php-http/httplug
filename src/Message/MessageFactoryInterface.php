@@ -49,7 +49,7 @@ interface MessageFactoryInterface
      * @param string|UriInterface                  $uri
      * @param string                               $method
      * @param string                               $protocolVersion
-     * @param array                                $headers
+     * @param string[]                             $headers
      * @param resource|string|StreamInterface|null $body
      * @param array                                $parameters
      *
@@ -92,7 +92,7 @@ interface MessageFactoryInterface
      *
      * @param integer                              $statusCode
      * @param string                               $protocolVersion
-     * @param array                                $headers
+     * @param string[]                             $headers
      * @param resource|string|StreamInterface|null $body
      * @param array                                $parameters
      *
