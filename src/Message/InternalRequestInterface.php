@@ -19,11 +19,18 @@ interface InternalRequestInterface extends RequestInterface
     /**
      * Returns some data by name
      *
-     * @param string|null $name
+     * @param string $name
      *
      * @return mixed
      */
-    public function getData($name = null);
+    public function getData($name);
+
+    /**
+     * Returns all data
+     *
+     * @return array
+     */
+    public function getAllData();
 
     /**
      * Checks if the data exists
@@ -33,6 +40,13 @@ interface InternalRequestInterface extends RequestInterface
      * @return boolean
      */
     public function hasData($name);
+
+    /**
+     * Checks if any data exists
+     *
+     * @return boolean
+     */
+    public function hasAnyData();
 
     /**
      * Sets some data by name
@@ -87,6 +101,13 @@ interface InternalRequestInterface extends RequestInterface
      * @return boolean
      */
     public function hasFile($name);
+
+    /**
+     * Checks if any file exists
+     *
+     * @return boolean
+     */
+    public function hasFiles();
 
     /**
      * Sets a file by name
