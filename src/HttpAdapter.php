@@ -11,6 +11,7 @@
 
 namespace Http\Adapter;
 
+use Psr\Http\Message\UriInterface;
 use Psr\Http\Message\ResponseInterface;
 
 /**
@@ -21,8 +22,8 @@ interface HttpAdapter extends PsrHttpAdapter
     /**
      * Sends a GET request
      *
-     * @param string|object $uri
-     * @param array         $headers
+     * @param string|UriInterface $uri
+     * @param string[]            $headers
      *
      * @throws HttpAdapterException If an error occurred.
      *
@@ -31,10 +32,10 @@ interface HttpAdapter extends PsrHttpAdapter
     public function get($uri, array $headers = []);
 
     /**
-     * Sends an HEAD request.
+     * Sends an HEAD request
      *
-     * @param string|object $uri
-     * @param array         $headers
+     * @param string|UriInterface $uri
+     * @param string[]            $headers
      *
      * @throws HttpAdapterException If an error occurred.
      *
@@ -43,10 +44,10 @@ interface HttpAdapter extends PsrHttpAdapter
     public function head($uri, array $headers = []);
 
     /**
-     * Sends a TRACE request.
+     * Sends a TRACE request
      *
-     * @param string|object $uri
-     * @param array         $headers
+     * @param string|UriInterface $uri
+     * @param string[]            $headers
      *
      * @throws HttpAdapterException If an error occurred.
      *
@@ -55,12 +56,12 @@ interface HttpAdapter extends PsrHttpAdapter
     public function trace($uri, array $headers = []);
 
     /**
-     * Sends a POST request.
+     * Sends a POST request
      *
-     * @param string|object $uri
-     * @param array         $headers
-     * @param array|string  $data
-     * @param array         $files
+     * @param string|UriInterface $uri
+     * @param string[]            $headers
+     * @param array|string        $data
+     * @param array               $files
      *
      * @throws HttpAdapterException If an error occurred.
      *
@@ -69,12 +70,12 @@ interface HttpAdapter extends PsrHttpAdapter
     public function post($uri, array $headers = [], $data = [], array $files = []);
 
     /**
-     * Sends a PUT request.
+     * Sends a PUT request
      *
-     * @param string|object $uri
-     * @param array         $headers
-     * @param array|string  $data
-     * @param array         $files
+     * @param string|UriInterface $uri
+     * @param string[]            $headers
+     * @param array|string        $data
+     * @param array               $files
      *
      * @throws HttpAdapterException If an error occurred.
      *
@@ -83,12 +84,12 @@ interface HttpAdapter extends PsrHttpAdapter
     public function put($uri, array $headers = [], $data = [], array $files = []);
 
     /**
-     * Sends a PATCH request.
+     * Sends a PATCH request
      *
-     * @param string|object $uri
-     * @param array         $headers
-     * @param array|string  $data
-     * @param array         $files
+     * @param string|UriInterface $uri
+     * @param string[]            $headers
+     * @param array|string        $data
+     * @param array               $files
      *
      * @throws HttpAdapterException If an error occurred.
      *
@@ -97,12 +98,12 @@ interface HttpAdapter extends PsrHttpAdapter
     public function patch($uri, array $headers = [], $data = [], array $files = []);
 
     /**
-     * Sends a DELETE request.
+     * Sends a DELETE request
      *
-     * @param string|object $uri
-     * @param array         $headers
-     * @param array|string  $data
-     * @param array         $files
+     * @param string|UriInterface $uri
+     * @param string[]            $headers
+     * @param array|string        $data
+     * @param array               $files
      *
      * @throws HttpAdapterException If an error occurred.
      *
@@ -111,12 +112,12 @@ interface HttpAdapter extends PsrHttpAdapter
     public function delete($uri, array $headers = [], $data = [], array $files = []);
 
     /**
-     * Sends an OPTIONS request.
+     * Sends an OPTIONS request
      *
-     * @param string|object $uri
-     * @param array         $headers
-     * @param array|string  $data
-     * @param array         $files
+     * @param string|UriInterface $uri
+     * @param string[]            $headers
+     * @param array|string        $data
+     * @param array               $files
      *
      * @throws HttpAdapterException If an error occurred.
      *
@@ -125,13 +126,13 @@ interface HttpAdapter extends PsrHttpAdapter
     public function options($uri, array $headers = [], $data = [], array $files = []);
 
     /**
-     * Sends a request.
+     * Sends a request
      *
-     * @param string|object $uri
-     * @param string        $method
-     * @param array         $headers
-     * @param array|string  $data
-     * @param array         $files
+     * @param string|UriInterface $uri
+     * @param string              $method
+     * @param string[]            $headers
+     * @param array|string        $data
+     * @param array               $files
      *
      * @throws HttpAdapterException If an error occurred.
      *
