@@ -11,7 +11,6 @@
 
 namespace Http\Adapter;
 
-use Http\Adapter\ConfigurationInterface;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
 
@@ -26,20 +25,6 @@ interface PsrHttpAdapterInterface
     const MINOR_VERSION = '1';
     const PATCH_VERSION = '0';
     const EXTRA_VERSION = 'DEV';
-
-    /**
-     * Returns the configuration
-     *
-     * @return ConfigurationInterface
-     */
-    public function getConfiguration();
-
-    /**
-     * Sets the configuration
-     *
-     * @param ConfigurationInterface $configuration
-     */
-    public function setConfiguration(ConfigurationInterface $configuration);
 
     /**
      * Sends a PSR request
