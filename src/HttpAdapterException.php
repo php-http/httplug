@@ -245,7 +245,7 @@ class HttpAdapterException extends \Exception
     public static function streamIsNotValid($stream, $wrapper, $expected)
     {
         return new self(sprintf(
-            'The stream "%s" only accepts a "%s" (current: "%s")',
+            'The stream "%s" only accepts a "%s" (current: "%s").',
             $wrapper,
             $expected,
             is_object($stream) ? get_class($stream) : gettype($stream)
