@@ -155,17 +155,6 @@ class HttpAdapterExceptionTest extends \PHPUnit_Framework_TestCase
         );
     }
 
-    public function testExtensionIsNotLoaded()
-    {
-        $exception = HttpAdapterException::extensionIsNotLoaded('extension', 'adapter');
-
-        $this->assertInstanceOf('Http\Adapter\HttpAdapterException', $exception);
-        $this->assertSame(
-            'The adapter "adapter" expects the PHP extension "extension" to be loaded.',
-            $exception->getMessage()
-        );
-    }
-
     public function testMaxRedirectsExceeded()
     {
         $exception = HttpAdapterException::maxRedirectsExceeded('uri', 5, 'adapter');

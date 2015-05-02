@@ -192,19 +192,6 @@ class HttpAdapterException extends \Exception
     }
 
     /**
-     * Returns a "EXTENSION IS NOT LOADED" exception
-     *
-     * @param string $extension
-     * @param string $adapter
-     *
-     * @return self
-     */
-    public static function extensionIsNotLoaded($extension, $adapter)
-    {
-        return new self(sprintf('The adapter "%s" expects the PHP extension "%s" to be loaded.', $adapter, $extension));
-    }
-
-    /**
      * Returns a "MAX REDIRECTS EXCEEDED" exception
      *
      * @param string  $uri
