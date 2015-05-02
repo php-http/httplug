@@ -70,7 +70,7 @@ interface MessageFactoryInterface
      * @param string|UriInterface $uri
      * @param string              $method
      * @param string              $protocolVersion
-     * @param array               $headers
+     * @param string[]            $headers
      * @param array|string        $data
      * @param array               $files
      * @param array               $parameters

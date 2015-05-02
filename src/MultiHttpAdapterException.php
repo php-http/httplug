@@ -171,7 +171,7 @@ class MultiHttpAdapterException extends \Exception
     /**
      * Sets the responses
      *
-     * @param array $responses
+     * @param ResponseInterface[] $responses
      */
     public function setResponses(array $responses)
     {
