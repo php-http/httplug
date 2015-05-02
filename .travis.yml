@@ -10,6 +10,7 @@ php:
 matrix:
   allow_failures:
     - php: 7.0
+    - php: hhvm
   include:
     - php: 5.4
       env:
