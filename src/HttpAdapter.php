@@ -128,8 +128,8 @@ interface HttpAdapter extends PsrHttpAdapter
     /**
      * Sends a request
      *
-     * @param string|UriInterface $uri
      * @param string              $method
+     * @param string|UriInterface $uri
      * @param string[]            $headers
      * @param array|string        $data
      * @param array               $files
@@ -138,5 +138,5 @@ interface HttpAdapter extends PsrHttpAdapter
      *
      * @return ResponseInterface
      */
-    public function send($uri, $method, array $headers = [], $data = [], array $files = []);
+    public function send($method, $uri, array $headers = [], $data = [], array $files = []);
 }
