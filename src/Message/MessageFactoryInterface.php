@@ -56,7 +56,7 @@ interface MessageFactoryInterface
      * @return RequestInterface
      */
     public function createRequest(
-        $method = RequestInterface::METHOD_GET,
+        $method,
         $uri,
         $protocolVersion = RequestInterface::PROTOCOL_VERSION_1_1,
         array $headers = [],
@@ -78,7 +78,7 @@ interface MessageFactoryInterface
      * @return InternalRequestInterface
      */
     public function createInternalRequest(
-        $method = RequestInterface::METHOD_GET,
+        $method,
         $uri,
         $protocolVersion = RequestInterface::PROTOCOL_VERSION_1_1,
         array $headers = [],
