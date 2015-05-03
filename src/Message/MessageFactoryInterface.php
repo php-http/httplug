@@ -46,8 +46,8 @@ interface MessageFactoryInterface
     /**
      * Creates a new request
      *
-     * @param string|UriInterface                  $uri
      * @param string                               $method
+     * @param string|UriInterface                  $uri
      * @param string                               $protocolVersion
      * @param string[]                             $headers
      * @param resource|string|StreamInterface|null $body
@@ -56,8 +56,8 @@ interface MessageFactoryInterface
      * @return RequestInterface
      */
     public function createRequest(
-        $uri,
         $method = RequestInterface::METHOD_GET,
+        $uri,
         $protocolVersion = RequestInterface::PROTOCOL_VERSION_1_1,
         array $headers = [],
         $body = null,
@@ -67,8 +67,8 @@ interface MessageFactoryInterface
     /**
      * Creates an internal request
      *
-     * @param string|UriInterface $uri
      * @param string              $method
+     * @param string|UriInterface $uri
      * @param string              $protocolVersion
      * @param string[]            $headers
      * @param array|string        $data
@@ -78,8 +78,8 @@ interface MessageFactoryInterface
      * @return InternalRequestInterface
      */
     public function createInternalRequest(
-        $uri,
         $method = RequestInterface::METHOD_GET,
+        $uri,
         $protocolVersion = RequestInterface::PROTOCOL_VERSION_1_1,
         array $headers = [],
         $data = [],
@@ -88,7 +88,7 @@ interface MessageFactoryInterface
     );
 
     /**
-     * Creates a response.
+     * Creates a response
      *
      * @param integer                              $statusCode
      * @param string                               $protocolVersion
