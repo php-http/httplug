@@ -26,7 +26,8 @@ interface PsrHttpAdapter
      *
      * @return ResponseInterface
      *
-     * @throws HttpAdapterException If an error occurred.
+     * @throws \InvalidArgumentException
+     * @throws HttpAdapterException
      */
     public function sendRequest(RequestInterface $request);
 
@@ -37,7 +38,8 @@ interface PsrHttpAdapter
      *
      * @return ResponseInterface[]
      *
-     * @throws MultiHttpAdapterException If an error occurred.
+     * @throws \InvalidArgumentException
+     * @throws MultiHttpAdapterException
      */
     public function sendRequests(array $requests);
 
