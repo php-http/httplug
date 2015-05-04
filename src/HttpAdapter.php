@@ -11,6 +11,7 @@
 
 namespace Http\Adapter;
 
+use Psr\Http\Message\StreamInterface;
 use Psr\Http\Message\UriInterface;
 use Psr\Http\Message\ResponseInterface;
 
@@ -25,7 +26,8 @@ interface HttpAdapter extends PsrHttpAdapter
      * @param string|UriInterface $uri
      * @param string[]            $headers
      *
-     * @throws HttpAdapterException If an error occurred.
+     * @throws \InvalidArgumentException
+     * @throws HttpAdapterException
      *
      * @return ResponseInterface
      */
@@ -37,7 +39,8 @@ interface HttpAdapter extends PsrHttpAdapter
      * @param string|UriInterface $uri
      * @param string[]            $headers
      *
-     * @throws HttpAdapterException If an error occurred.
+     * @throws \InvalidArgumentException
+     * @throws HttpAdapterException
      *
      * @return ResponseInterface
      */
@@ -49,7 +52,8 @@ interface HttpAdapter extends PsrHttpAdapter
      * @param string|UriInterface $uri
      * @param string[]            $headers
      *
-     * @throws HttpAdapterException If an error occurred.
+     * @throws \InvalidArgumentException
+     * @throws HttpAdapterException
      *
      * @return ResponseInterface
      */
@@ -58,12 +62,13 @@ interface HttpAdapter extends PsrHttpAdapter
     /**
      * Sends a POST request
      *
-     * @param string|UriInterface $uri
-     * @param string[]            $headers
-     * @param array|string        $data
-     * @param array               $files
+     * @param string|UriInterface          $uri
+     * @param string[]                     $headers
+     * @param array|string|StreamInterface $data
+     * @param array                        $files
      *
-     * @throws HttpAdapterException If an error occurred.
+     * @throws \InvalidArgumentException
+     * @throws HttpAdapterException
      *
      * @return ResponseInterface
      */
@@ -72,12 +77,13 @@ interface HttpAdapter extends PsrHttpAdapter
     /**
      * Sends a PUT request
      *
-     * @param string|UriInterface $uri
-     * @param string[]            $headers
-     * @param array|string        $data
-     * @param array               $files
+     * @param string|UriInterface          $uri
+     * @param string[]                     $headers
+     * @param array|string|StreamInterface $data
+     * @param array                        $files
      *
-     * @throws HttpAdapterException If an error occurred.
+     * @throws \InvalidArgumentException
+     * @throws HttpAdapterException
      *
      * @return ResponseInterface
      */
@@ -86,12 +92,13 @@ interface HttpAdapter extends PsrHttpAdapter
     /**
      * Sends a PATCH request
      *
-     * @param string|UriInterface $uri
-     * @param string[]            $headers
-     * @param array|string        $data
-     * @param array               $files
+     * @param string|UriInterface          $uri
+     * @param string[]                     $headers
+     * @param array|string|StreamInterface $data
+     * @param array                        $files
      *
-     * @throws HttpAdapterException If an error occurred.
+     * @throws \InvalidArgumentException
+     * @throws HttpAdapterException
      *
      * @return ResponseInterface
      */
@@ -100,12 +107,13 @@ interface HttpAdapter extends PsrHttpAdapter
     /**
      * Sends a DELETE request
      *
-     * @param string|UriInterface $uri
-     * @param string[]            $headers
-     * @param array|string        $data
-     * @param array               $files
+     * @param string|UriInterface          $uri
+     * @param string[]                     $headers
+     * @param array|string|StreamInterface $data
+     * @param array                        $files
      *
-     * @throws HttpAdapterException If an error occurred.
+     * @throws \InvalidArgumentException
+     * @throws HttpAdapterException
      *
      * @return ResponseInterface
      */
@@ -114,12 +122,13 @@ interface HttpAdapter extends PsrHttpAdapter
     /**
      * Sends an OPTIONS request
      *
-     * @param string|UriInterface $uri
-     * @param string[]            $headers
-     * @param array|string        $data
-     * @param array               $files
+     * @param string|UriInterface          $uri
+     * @param string[]                     $headers
+     * @param array|string|StreamInterface $data
+     * @param array                        $files
      *
-     * @throws HttpAdapterException If an error occurred.
+     * @throws \InvalidArgumentException
+     * @throws HttpAdapterException
      *
      * @return ResponseInterface
      */
@@ -128,13 +137,14 @@ interface HttpAdapter extends PsrHttpAdapter
     /**
      * Sends a request
      *
-     * @param string              $method
-     * @param string|UriInterface $uri
-     * @param string[]            $headers
-     * @param array|string        $data
-     * @param array               $files
+     * @param string                       $method
+     * @param string|UriInterface          $uri
+     * @param string[]                     $headers
+     * @param array|string|StreamInterface $data
+     * @param array                        $files
      *
-     * @throws HttpAdapterException If an error occurred.
+     * @throws \InvalidArgumentException
+     * @throws HttpAdapterException
      *
      * @return ResponseInterface
      */
