@@ -22,6 +22,10 @@ $ composer require php-http/adapter
 
 ## Usage
 
+This is the contract package for HTTP Adapter. It should be used when implementing a custom HTTP Adapter or to rely on a stable version of interfaces.
+
+There is also a virtual package which is versioned together with this contract package: [php-http/adapter-implementation](https://packagist.org/providers/php-http/adapter-implementation).
+
 
 ## Testing
 

@@ -13,7 +13,7 @@ you must follow these rules.
 
 If you think a feature is missing, please report it or even better implement it :). If you report it, describe the more
 precisely what you would like to see implemented and we will discuss what is the best approach for it. If you can do
-some search before submitting it and link the resources to your description, you're awesome! It will allow me to more
+some search before submitting it and link the resources to your description, you're awesome! It will allow us to more
 easily understood/implement it.
 
 
@@ -22,7 +22,8 @@ easily understood/implement it.
 If you think you have detected a bug or a doc issue, please report it or even better fix it :). If you report it,
 please be the more precise possible. Here a little list of required informations:
 
- * Precise description of the bug.
+ - Precise description of the bug
+ - Details of your environment
 
 
 ## Bug fix
@@ -42,8 +43,8 @@ $ composer install
 ```
 
 When you're on the new branch with the dependencies, code as much as you want and when the fix is ready, don't commit
-it immediately. Before, you will need to add tests and update the doc. For the tests, everything is tested with
-[PHPUnit](http://phpunit.de/) and the doc is in the markdown format under the `doc` directory.
+it immediately. Before, you will need to add tests and update the documentation. For the tests, everything is tested with
+[PHPUnit](http://phpunit.de/), the documentation is in markdown format in the `gh-pages` branch.
 
 To run the tests, use the following command:
 
