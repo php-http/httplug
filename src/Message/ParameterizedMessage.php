@@ -14,7 +14,7 @@ namespace Http\Adapter\Message;
 /**
  * @author GeLo <geloen.eric@gmail.com>
  */
-interface ParameteredMessage
+interface ParameterizedMessage
 {
     /**
      * Returns a parameter by name
