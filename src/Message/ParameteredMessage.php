@@ -11,19 +11,11 @@
 
 namespace Http\Adapter\Message;
 
-use Psr\Http\Message\MessageInterface as PsrMessageInterface;
-
 /**
  * @author GeLo <geloen.eric@gmail.com>
  */
-interface MessageInterface extends PsrMessageInterface
+interface ParameteredMessage
 {
-    /** @const string */
-    const PROTOCOL_VERSION_1_0 = '1.0';
-
-    /** @const string */
-    const PROTOCOL_VERSION_1_1 = '1.1';
-
     /**
      * Returns a parameter by name
      *
