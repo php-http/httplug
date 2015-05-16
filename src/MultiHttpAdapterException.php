@@ -11,7 +11,7 @@
 
 namespace Http\Adapter;
 
-use Http\Adapter\Message\ResponseInterface;
+use Psr\Http\Message\ResponseInterface;
 
 /**
  * @author GeLo <geloen.eric@gmail.com>
