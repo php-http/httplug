@@ -15,7 +15,6 @@ namespace Http\Adapter;
  * Allows global configurations
  *
  * This interface does not allow modifying options
- * Check the specific mutable and immutable interfaces
  *
  * @author Márk Sági-Kazár mark.sagikazar@gmail.com>
  */

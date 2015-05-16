@@ -11,13 +11,10 @@
 
 namespace Http\Adapter\Message;
 
-use Http\Adapter\Configurable\ImmutableConfigurable;
-use Psr\Http\Message\RequestInterface;
-
 /**
  * @author GeLo <geloen.eric@gmail.com>
  */
-interface InternalRequest extends RequestInterface, ParameterableMessage, ImmutableConfigurable
+interface InternalRequest extends ConfigurableRequest, ParameterableMessage
 {
     /**
      * Returns some data by name

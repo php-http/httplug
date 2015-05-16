@@ -9,16 +9,17 @@
  * file that was distributed with this source code.
  */
 
-namespace Http\Adapter\Configurable;
+namespace Http\Adapter\Message;
 
-use Http\Adapter\Configurable;
+use Psr\Http\Message\RequestInterface;
+use Psr\Http\Configurable;
 
 /**
- * Allows to modify configuration an immutable way
+ * Allows to modify configuration in a request an immutable way
  *
  * @author Márk Sági-Kazár mark.sagikazar@gmail.com>
  */
-interface ImmutableConfigurable extends Configurable
+interface ConfigurableRequest extends RequestInterface, Configurable
 {
     /**
      * Sets an option
