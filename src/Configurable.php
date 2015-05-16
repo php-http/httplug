@@ -14,12 +14,15 @@ namespace Http\Adapter;
 /**
  * Allows global configurations
  *
+ * This interface does not allow modifying options
+ * Check the specific mutable and immutable interfaces
+ *
  * @author Márk Sági-Kazár mark.sagikazar@gmail.com>
  */
 interface Configurable
 {
     /**
-     * Returns a sepcific option or null
+     * Returns an option by name
      *
      * @param string $name
      *
@@ -35,7 +38,7 @@ interface Configurable
     public function getOptions();
 
     /**
-     * Checks if an option is set
+     * Checks if an option exists
      *
      * @param string $name
      *
@@ -44,17 +47,9 @@ interface Configurable
     public function hasOption($name);
 
     /**
-     * Sets an option
+     * Checks if any option exists
      *
-     * @param string $name
-     * @param mixed  $option
+     * @return boolean
      */
-    public function setOption($name, $option);
-
-    /**
-     * Sets all options
-     *
-     * @param array $options
-     */
-    public function setOptions($options);
+    public function hasOptions();
 }

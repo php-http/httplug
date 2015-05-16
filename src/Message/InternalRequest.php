@@ -11,12 +11,13 @@
 
 namespace Http\Adapter\Message;
 
+use Http\Adapter\Configurable\ImmutableConfigurable;
 use Psr\Http\Message\RequestInterface;
 
 /**
  * @author GeLo <geloen.eric@gmail.com>
  */
-interface InternalRequest extends RequestInterface, ParameterableMessage
+interface InternalRequest extends RequestInterface, ParameterableMessage, ImmutableConfigurable
 {
     /**
      * Returns some data by name
@@ -89,14 +90,14 @@ interface InternalRequest extends RequestInterface, ParameterableMessage
     public function getFile($name);
 
     /**
-     * Returns the files
+     * Returns all files
      *
      * @return array
      */
     public function getFiles();
 
     /**
-     * Checks if the file exists
+     * Checks if a file exists
      *
      * @param string $name
      *
