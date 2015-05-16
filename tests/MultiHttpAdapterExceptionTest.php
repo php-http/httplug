@@ -12,7 +12,7 @@
 namespace Http\Adapter\Tests;
 
 use Http\Adapter\HttpAdapterException;
-use Http\Adapter\Message\ResponseInterface;
+use Psr\Http\Message\ResponseInterface;
 use Http\Adapter\MultiHttpAdapterException;
 
 /**
@@ -172,7 +172,7 @@ class MultiHttpAdapterExceptionTest extends \PHPUnit_Framework_TestCase
      */
     private function createResponseMock()
     {
-        return $this->getMock('Http\Adapter\Message\ResponseInterface');
+        return $this->getMock('Psr\Http\Message\ResponseInterface');
     }
 
     /**
@@ -251,7 +251,7 @@ class MultiHttpAdapterExceptionTest extends \PHPUnit_Framework_TestCase
      */
     private function assertResponse($response)
     {
-        $this->assertInstanceOf('Http\Adapter\Message\ResponseInterface', $response);
+        $this->assertInstanceOf('Psr\Http\Message\ResponseInterface', $response);
         $this->assertTrue($this->multiHttpAdapterException->hasResponse($response));
     }
 
@@ -262,7 +262,7 @@ class MultiHttpAdapterExceptionTest extends \PHPUnit_Framework_TestCase
      */
     private function assertNoResponse($response)
     {
-        $this->assertInstanceOf('Http\Adapter\Message\ResponseInterface', $response);
+        $this->assertInstanceOf('Psr\Http\Message\ResponseInterface', $response);
         $this->assertFalse($this->multiHttpAdapterException->hasResponse($response));
     }
 }

@@ -12,8 +12,8 @@
 namespace Http\Adapter\Tests;
 
 use Http\Adapter\HttpAdapterException;
-use Http\Adapter\Message\InternalRequestInterface;
-use Http\Adapter\Message\ResponseInterface;
+use Http\Adapter\Message\InternalRequest;
+use Psr\Http\Message\ResponseInterface;
 
 /**
  * @author GeLo <geloen.eric@gmail.com>
@@ -82,153 +82,14 @@ class HttpAdapterExceptionTest extends \PHPUnit_Framework_TestCase
         $this->assertNull($this->exception->getRequest());
     }
 
-    public function testCannotFetchUri()
-    {
-        $exception = HttpAdapterException::cannotFetchUri('uri', 'adapter', 'error');
-
-        $this->assertInstanceOf('Http\Adapter\HttpAdapterException', $exception);
-        $this->assertSame(
-            'An error occurred when fetching the URI "uri" with the adapter "adapter" ("error").',
-            $exception->getMessage()
-        );
-    }
-
-    public function testCannotLoadCookieJar()
-    {
-        $exception = HttpAdapterException::cannotLoadCookieJar('error');
-
-        $this->assertInstanceOf('Http\Adapter\HttpAdapterException', $exception);
-        $this->assertSame('An error occurred when loading the cookie jar ("error").', $exception->getMessage());
-    }
-
-    public function testCannotSaveCookieJar()
-    {
-        $exception = HttpAdapterException::cannotSaveCookieJar('error');
-
-        $this->assertInstanceOf('Http\Adapter\HttpAdapterException', $exception);
-        $this->assertSame('An error occurred when saving the cookie jar ("error").', $exception->getMessage());
-    }
-
-    public function testHttpAdapterDoesNotExist()
-    {
-        $exception = HttpAdapterException::httpAdapterDoesNotExist('adapter');
-
-        $this->assertInstanceOf('Http\Adapter\HttpAdapterException', $exception);
-        $this->assertSame('The http adapter "adapter" does not exist.', $exception->getMessage());
-    }
-
-    public function testHttpAdapterIsNotUsable()
-    {
-        $exception = HttpAdapterException::httpAdapterIsNotUsable('adapter');
-
-        $this->assertInstanceOf('Http\Adapter\HttpAdapterException', $exception);
-        $this->assertSame('The http adapter "adapter" is not usable.', $exception->getMessage());
-    }
-
-    public function testHttpAdaptersAreNotUsable()
-    {
-        $exception = HttpAdapterException::httpAdaptersAreNotUsable();
-
-        $this->assertInstanceOf('Http\Adapter\HttpAdapterException', $exception);
-        $this->assertSame('No http adapters are usable.', $exception->getMessage());
-    }
-
-    public function testHttpAdapterMustImplementInterface()
-    {
-        $exception = HttpAdapterException::httpAdapterMustImplementInterface('class');
-
-        $this->assertInstanceOf('Http\Adapter\HttpAdapterException', $exception);
-        $this->assertSame(
-            'The class "class" must implement "Ivory\HttpAdapter\HttpAdapterInterface".',
-            $exception->getMessage()
-        );
-    }
-
-    public function testDoesNotSupportSubAdapter()
-    {
-        $exception = HttpAdapterException::doesNotSupportSubAdapter('adapter', 'subAdapter');
-
-        $this->assertInstanceOf('Http\Adapter\HttpAdapterException', $exception);
-        $this->assertSame(
-            'The adapter "adapter" does not support the sub-adapter "subAdapter".',
-            $exception->getMessage()
-        );
-    }
-
-    public function testMaxRedirectsExceeded()
-    {
-        $exception = HttpAdapterException::maxRedirectsExceeded('uri', 5, 'adapter');
-
-        $this->assertInstanceOf('Http\Adapter\HttpAdapterException', $exception);
-        $this->assertSame(
-            'An error occurred when fetching the URI "uri" with the adapter "adapter" ("Max redirects exceeded (5)").',
-            $exception->getMessage()
-        );
-    }
-
-    public function testRequestIsNotValidWithObject()
-    {
-        $exception = HttpAdapterException::requestIsNotValid(new \stdClass());
-
-        $this->assertInstanceOf('Http\Adapter\HttpAdapterException', $exception);
-        $this->assertSame(
-            'The request must be a string, an array or implement "Psr\Http\Message\RequestInterface" ("stdClass" given).',
-            $exception->getMessage()
-        );
-    }
-
-    public function testRequestIsNotValidWithScalar()
-    {
-        $exception = HttpAdapterException::requestIsNotValid(true);
-
-        $this->assertInstanceOf('Http\Adapter\HttpAdapterException', $exception);
-        $this->assertSame(
-            'The request must be a string, an array or implement "Psr\Http\Message\RequestInterface" ("boolean" given).',
-            $exception->getMessage()
-        );
-    }
-
-    public function testStreamIsNotValidWithObject()
-    {
-        $exception = HttpAdapterException::streamIsNotValid(new \stdClass(), 'wrapper', 'expected');
-
-        $this->assertInstanceOf('Http\Adapter\HttpAdapterException', $exception);
-        $this->assertSame(
-            'The stream "wrapper" only accepts a "expected" (current: "stdClass").',
-            $exception->getMessage()
-        );
-    }
-
-    public function testStreamIsNotValidWithScalar()
-    {
-        $exception = HttpAdapterException::streamIsNotValid(true, 'wrapper', 'expected');
-
-        $this->assertInstanceOf('Http\Adapter\HttpAdapterException', $exception);
-        $this->assertSame(
-            'The stream "wrapper" only accepts a "expected" (current: "boolean").',
-            $exception->getMessage()
-        );
-    }
-
-    public function testTimeoutExceeded()
-    {
-        $exception = HttpAdapterException::timeoutExceeded('uri', 1.1, 'adapter');
-
-        $this->assertInstanceOf('Http\Adapter\HttpAdapterException', $exception);
-        $this->assertSame(
-            'An error occurred when fetching the URI "uri" with the adapter "adapter" ("Timeout exceeded (1.10)").',
-            $exception->getMessage()
-        );
-    }
-
     /**
      * Creates a request mock
      *
-     * @return InternalRequestInterface|\PHPUnit_Framework_MockObject_MockObject
+     * @return InternalRequest|\PHPUnit_Framework_MockObject_MockObject
      */
     private function createRequestMock()
     {
-        return $this->getMock('Http\Adapter\Message\InternalRequestInterface');
+        return $this->getMock('Http\Adapter\Message\InternalRequest');
     }
 
     /**
@@ -238,6 +99,6 @@ class HttpAdapterExceptionTest extends \PHPUnit_Framework_TestCase
      */
     private function createResponseMock()
     {
-        return $this->getMock('Http\Adapter\Message\ResponseInterface');
+        return $this->getMock('Psr\Http\Message\ResponseInterface');
     }
 }
