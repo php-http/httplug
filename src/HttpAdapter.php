@@ -27,7 +27,7 @@ interface HttpAdapter extends PsrHttpAdapter
      * @param string[]            $headers
      *
      * @throws \InvalidArgumentException
-     * @throws HttpAdapterException
+     * @throws Exception\HttpAdapterException
      *
      * @return ResponseInterface
      */
@@ -40,7 +40,7 @@ interface HttpAdapter extends PsrHttpAdapter
      * @param string[]            $headers
      *
      * @throws \InvalidArgumentException
-     * @throws HttpAdapterException
+     * @throws Exception\HttpAdapterException
      *
      * @return ResponseInterface
      */
@@ -53,7 +53,7 @@ interface HttpAdapter extends PsrHttpAdapter
      * @param string[]            $headers
      *
      * @throws \InvalidArgumentException
-     * @throws HttpAdapterException
+     * @throws Exception\HttpAdapterException
      *
      * @return ResponseInterface
      */
@@ -68,7 +68,7 @@ interface HttpAdapter extends PsrHttpAdapter
      * @param array                        $files
      *
      * @throws \InvalidArgumentException
-     * @throws HttpAdapterException
+     * @throws Exception\HttpAdapterException
      *
      * @return ResponseInterface
      */
@@ -83,7 +83,7 @@ interface HttpAdapter extends PsrHttpAdapter
      * @param array                        $files
      *
      * @throws \InvalidArgumentException
-     * @throws HttpAdapterException
+     * @throws Exception\HttpAdapterException
      *
      * @return ResponseInterface
      */
@@ -98,7 +98,7 @@ interface HttpAdapter extends PsrHttpAdapter
      * @param array                        $files
      *
      * @throws \InvalidArgumentException
-     * @throws HttpAdapterException
+     * @throws Exception\HttpAdapterException
      *
      * @return ResponseInterface
      */
@@ -113,7 +113,7 @@ interface HttpAdapter extends PsrHttpAdapter
      * @param array                        $files
      *
      * @throws \InvalidArgumentException
-     * @throws HttpAdapterException
+     * @throws Exception\HttpAdapterException
      *
      * @return ResponseInterface
      */
@@ -128,7 +128,7 @@ interface HttpAdapter extends PsrHttpAdapter
      * @param array                        $files
      *
      * @throws \InvalidArgumentException
-     * @throws HttpAdapterException
+     * @throws Exception\HttpAdapterException
      *
      * @return ResponseInterface
      */
@@ -144,7 +144,7 @@ interface HttpAdapter extends PsrHttpAdapter
      * @param array                        $files
      *
      * @throws \InvalidArgumentException
-     * @throws HttpAdapterException
+     * @throws Exception\HttpAdapterException
      *
      * @return ResponseInterface
      */
