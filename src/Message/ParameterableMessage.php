@@ -12,9 +12,11 @@
 namespace Http\Adapter\Message;
 
 /**
+ * Allows to define parameters for a message
+ *
  * @author GeLo <geloen.eric@gmail.com>
  */
-interface ParameterizedMessage
+interface ParameterableMessage
 {
     /**
      * Returns a parameter by name

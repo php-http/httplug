@@ -16,7 +16,7 @@ use Psr\Http\Message\RequestInterface;
 /**
  * @author GeLo <geloen.eric@gmail.com>
  */
-interface InternalRequest extends RequestInterface, ParameterizedMessage
+interface InternalRequest extends RequestInterface, ParameterableMessage
 {
     /**
      * Returns some data by name
