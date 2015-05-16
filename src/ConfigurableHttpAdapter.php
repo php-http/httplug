@@ -16,6 +16,8 @@ use Psr\Http\Message\UriInterface;
 use Psr\Http\Message\ResponseInterface;
 
 /**
+ * Allows request level configurations
+ *
  * @author Márk Sági-Kazár mark.sagikazar@gmail.com>
  */
 interface ConfigurableHttpAdapter extends HttpAdapter
