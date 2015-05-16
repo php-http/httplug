@@ -9,12 +9,10 @@
  * file that was distributed with this source code.
  */
 
-namespace Http\Adapter\Configurable;
-
-use Http\Adapter\Configurable;
+namespace Http\Adapter;
 
 /**
- * Allows to modify configuration a mutable way
+ * Allows to modify configuration
  *
  * @author Márk Sági-Kazár mark.sagikazar@gmail.com>
  */
@@ -33,5 +31,5 @@ interface MutableConfigurable extends Configurable
      *
      * @param array $options
      */
-    public function setOptions($options);
+    public function setOptions(array $options);
 }
