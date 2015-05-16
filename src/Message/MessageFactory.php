@@ -13,12 +13,14 @@ namespace Http\Adapter\Message;
 
 use Http\Adapter\HttpAdapterException;
 use Psr\Http\Message\UriInterface;
+use Psr\Http\Message\RequestInterface;
+use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\StreamInterface;
 
 /**
  * @author GeLo <geloen.eric@gmail.com>
  */
-interface MessageFactoryInterface
+interface MessageFactory
 {
     /**
      * Returns the base URI
@@ -58,7 +60,7 @@ interface MessageFactoryInterface
     public function createRequest(
         $method,
         $uri,
-        $protocolVersion = RequestInterface::PROTOCOL_VERSION_1_1,
+        $protocolVersion = '1.1',
         array $headers = [],
         $body = null,
         array $parameters = []
@@ -75,12 +77,12 @@ interface MessageFactoryInterface
      * @param array               $files
      * @param array               $parameters
      *
-     * @return InternalRequestInterface
+     * @return InternalRequest
      */
     public function createInternalRequest(
         $method,
         $uri,
-        $protocolVersion = RequestInterface::PROTOCOL_VERSION_1_1,
+        $protocolVersion = '1.1',
         array $headers = [],
         $data = [],
         array $files = [],
@@ -100,7 +102,7 @@ interface MessageFactoryInterface
      */
     public function createResponse(
         $statusCode = 200,
-        $protocolVersion = RequestInterface::PROTOCOL_VERSION_1_1,
+        $protocolVersion = '1.1',
         array $headers = [],
         $body = null,
         array $parameters = []

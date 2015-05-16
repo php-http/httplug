@@ -11,10 +11,12 @@
 
 namespace Http\Adapter\Message;
 
+use Psr\Http\Message\RequestInterface;
+
 /**
  * @author GeLo <geloen.eric@gmail.com>
  */
-interface InternalRequestInterface extends RequestInterface
+interface InternalRequest extends RequestInterface, ParameterableMessage
 {
     /**
      * Returns some data by name
