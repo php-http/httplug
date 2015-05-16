@@ -53,7 +53,6 @@ interface MessageFactory
      * @param string                               $protocolVersion
      * @param string[]                             $headers
      * @param resource|string|StreamInterface|null $body
-     * @param array                                $parameters
      *
      * @return RequestInterface
      */
@@ -62,8 +61,7 @@ interface MessageFactory
         $uri,
         $protocolVersion = '1.1',
         array $headers = [],
-        $body = null,
-        array $parameters = []
+        $body = null
     );
 
     /**
@@ -96,7 +94,6 @@ interface MessageFactory
      * @param string                               $protocolVersion
      * @param string[]                             $headers
      * @param resource|string|StreamInterface|null $body
-     * @param array                                $parameters
      *
      * @return ResponseInterface
      */
@@ -104,7 +101,6 @@ interface MessageFactory
         $statusCode = 200,
         $protocolVersion = '1.1',
         array $headers = [],
-        $body = null,
-        array $parameters = []
+        $body = null
     );
 }
