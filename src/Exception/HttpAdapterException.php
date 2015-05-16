@@ -9,83 +9,56 @@
  * file that was distributed with this source code.
  */
 
-namespace Http\Adapter;
+namespace Http\Adapter\Exception;
 
+use Http\Adapter\Exception;
 use Http\Adapter\Message\InternalRequest;
 use Psr\Http\Message\ResponseInterface;
 
 /**
  * @author GeLo <geloen.eric@gmail.com>
  */
-class HttpAdapterException extends \Exception
+interface HttpAdapterException extends Exception
 {
-    /**
-     * @var InternalRequest|null
-     */
-    private $request;
-
-    /**
-     * @var ResponseInterface|null
-     */
-    private $response;
-
     /**
      * Returns the request
      *
      * @return InternalRequest|null
      */
-    public function getRequest()
-    {
-        return $this->request;
-    }
+    public function getRequest();
 
     /**
      * Checks if there is a request
      *
      * @return boolean
      */
-    public function hasRequest()
-    {
-        return isset($this->request);
-    }
+    public function hasRequest();
 
     /**
      * Sets the request
      *
      * @param InternalRequest|null $request
      */
-    public function setRequest(InternalRequest $request = null)
-    {
-        $this->request = $request;
-    }
+    public function setRequest(InternalRequest $request = null);
 
     /**
      * Returns the response
      *
      * @return ResponseInterface|null
      */
-    public function getResponse()
-    {
-        return $this->response;
-    }
+    public function getResponse();
 
     /**
      * Checks if there is a response
      *
      * @return boolean
      */
-    public function hasResponse()
-    {
-        return isset($this->response);
-    }
+    public function hasResponse();
 
     /**
      * Sets the response
      *
      * @param ResponseInterface|null $response
      */
-    public function setResponse(ResponseInterface $response = null)
-    {
-        $this->response = $response;
-    }
+    public function setResponse(ResponseInterface $response = null);
 }
