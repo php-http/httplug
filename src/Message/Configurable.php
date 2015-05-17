@@ -11,7 +11,6 @@
 
 namespace Http\Adapter\Message;
 
-use Psr\Http\Message\MessageInterface;
 use Http\Adapter\HasConfiguration;
 
 /**
@@ -19,7 +18,7 @@ use Http\Adapter\HasConfiguration;
  *
  * @author Márk Sági-Kazár mark.sagikazar@gmail.com>
  */
-interface ConfigurableMessage extends MessageInterface, HasConfiguration
+interface Configurable extends HasConfiguration
 {
     /**
      * Sets an option
