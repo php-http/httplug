@@ -12,7 +12,7 @@
 namespace Http\Adapter\Message;
 
 use Psr\Http\Message\MessageInterface;
-use Psr\Http\HasConfiguration;
+use Http\Adapter\HasConfiguration;
 
 /**
  * Allows to modify configuration in a request an immutable way
