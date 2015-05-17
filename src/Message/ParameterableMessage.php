@@ -28,14 +28,14 @@ interface ParameterableMessage
     public function getParameter($name);
 
     /**
-     * Returns the parameters
+     * Returns all parameters
      *
      * @return array
      */
     public function getParameters();
 
     /**
-     * Checks if the parameter exists
+     * Checks if a parameter exists
      *
      * @param string $name
      *
