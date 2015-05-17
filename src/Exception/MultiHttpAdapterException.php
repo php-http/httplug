@@ -11,6 +11,7 @@
 
 namespace Http\Adapter\Exception;
 
+use Http\Adapter\Exception;
 use Psr\Http\Message\ResponseInterface;
 
 /**
