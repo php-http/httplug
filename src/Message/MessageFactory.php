@@ -25,7 +25,7 @@ interface MessageFactory
     /**
      * Returns the base URI
      *
-     * @return null|UriInterface
+     * @return UriInterface|null
      */
     public function getBaseUri();
 
@@ -39,7 +39,7 @@ interface MessageFactory
     /**
      * Sets the base URI
      *
-     * @param null|string|UriInterface $baseUri
+     * @param string|UriInterface|null $baseUri
      *
      * @throws \InvalidArgumentException If the base uri is invalid.
      */
@@ -62,31 +62,6 @@ interface MessageFactory
         $protocolVersion = '1.1',
         array $headers = [],
         $body = null
-    );
-
-    /**
-     * Creates an internal request
-     *
-     * @param string              $method
-     * @param string|UriInterface $uri
-     * @param string              $protocolVersion
-     * @param string[]            $headers
-     * @param array|string        $data
-     * @param array               $files
-     * @param array               $parameters
-     * @param array               $options
-     *
-     * @return InternalRequest
-     */
-    public function createInternalRequest(
-        $method,
-        $uri,
-        $protocolVersion = '1.1',
-        array $headers = [],
-        $data = [],
-        array $files = [],
-        array $parameters = [],
-        array $options = []
     );
 
     /**

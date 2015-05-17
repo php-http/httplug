@@ -12,7 +12,7 @@
 namespace Http\Adapter\Exception;
 
 use Http\Adapter\Exception;
-use Http\Adapter\Message\InternalRequest;
+use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
 
 /**
@@ -23,7 +23,7 @@ interface HttpAdapterException extends Exception
     /**
      * Returns the request
      *
-     * @return InternalRequest|null
+     * @return RequestInterface|null
      */
     public function getRequest();
 
@@ -37,9 +37,9 @@ interface HttpAdapterException extends Exception
     /**
      * Sets the request
      *
-     * @param InternalRequest|null $request
+     * @param RequestInterface|null $request
      */
-    public function setRequest(InternalRequest $request = null);
+    public function setRequest(RequestInterface $request = null);
 
     /**
      * Returns the response

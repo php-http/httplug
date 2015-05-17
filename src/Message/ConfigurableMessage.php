@@ -15,7 +15,7 @@ use Psr\Http\Message\MessageInterface;
 use Http\Adapter\HasConfiguration;
 
 /**
- * Allows to modify configuration in a request an immutable way
+ * Allows to modify configuration in a message an immutable way
  *
  * @author Márk Sági-Kazár mark.sagikazar@gmail.com>
  */

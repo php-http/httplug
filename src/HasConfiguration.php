@@ -12,7 +12,7 @@
 namespace Http\Adapter;
 
 /**
- * Allows global configurations
+ * Provides a configuration reading interface
  *
  * This interface does not allow modifying options
  *
