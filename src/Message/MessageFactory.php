@@ -86,7 +86,7 @@ interface MessageFactory
         $data = [],
         array $files = [],
         array $parameters = [],
-        array $options = [],
+        array $options = []
     );
 
     /**
