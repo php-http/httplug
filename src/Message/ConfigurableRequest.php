@@ -12,14 +12,14 @@
 namespace Http\Adapter\Message;
 
 use Psr\Http\Message\RequestInterface;
-use Psr\Http\Configurable;
+use Psr\Http\HasConfiguration;
 
 /**
  * Allows to modify configuration in a request an immutable way
  *
  * @author Márk Sági-Kazár mark.sagikazar@gmail.com>
  */
-interface ConfigurableRequest extends RequestInterface, Configurable
+interface ConfigurableRequest extends RequestInterface, HasConfiguration
 {
     /**
      * Sets an option

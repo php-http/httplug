@@ -12,43 +12,24 @@
 namespace Http\Adapter;
 
 /**
- * Allows global configurations
- *
- * This interface does not allow modifying options
+ * Allows to modify configuration
  *
  * @author Márk Sági-Kazár mark.sagikazar@gmail.com>
  */
-interface Configurable
+interface Configurable extends HasConfiguration
 {
     /**
-     * Returns an option by name
+     * Sets an option
      *
      * @param string $name
-     *
-     * @return mixed
+     * @param mixed  $option
      */
-    public function getOption($name);
+    public function setOption($name, $option);
 
     /**
-     * Returns all options
+     * Sets all options
      *
-     * @return array
+     * @param array $options
      */
-    public function getOptions();
-
-    /**
-     * Checks if an option exists
-     *
-     * @param string $name
-     *
-     * @return boolean
-     */
-    public function hasOption($name);
-
-    /**
-     * Checks if any option exists
-     *
-     * @return boolean
-     */
-    public function hasOptions();
+    public function setOptions(array $options);
 }
