@@ -74,6 +74,7 @@ interface MessageFactory
      * @param array|string        $data
      * @param array               $files
      * @param array               $parameters
+     * @param array               $options
      *
      * @return InternalRequest
      */
@@ -84,7 +85,8 @@ interface MessageFactory
         array $headers = [],
         $data = [],
         array $files = [],
-        array $parameters = []
+        array $parameters = [],
+        array $options = [],
     );
 
     /**
