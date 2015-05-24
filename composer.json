@@ -14,9 +14,6 @@
         "php": ">=5.4",
         "psr/http-message": "~1.0"
     },
-    "require-dev": {
-        "phpunit/phpunit": "~4.4"
-    },
     "autoload": {
         "psr-4": {
             "Http\\Adapter\\": "src/"
