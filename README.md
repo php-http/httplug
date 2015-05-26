@@ -1,5 +1,7 @@
 # HTTP Adapter
 
+[![Join the chat at https://gitter.im/php-http/adapter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/php-http/adapter?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 [![Latest Version](https://img.shields.io/github/release/php-http/adapter.svg?style=flat-square)](https://github.com/php-http/adapter/releases)
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE)
 [![Build Status](https://img.shields.io/travis/php-http/adapter.svg?style=flat-square)](https://travis-ci.org/php-http/adapter)
