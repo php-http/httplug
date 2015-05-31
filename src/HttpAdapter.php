@@ -23,25 +23,27 @@ interface HttpAdapter
      * Sends a PSR request
      *
      * @param RequestInterface $request
+     * @param array            $options
      *
      * @return ResponseInterface
      *
      * @throws \InvalidArgumentException
      * @throws Exception\HttpAdapterException
      */
-    public function sendRequest(RequestInterface $request);
+    public function sendRequest(RequestInterface $request, array $options = []);
 
     /**
      * Sends PSR requests
      *
      * @param RequestInterface[] $requests
+     * @param array              $options
      *
      * @return ResponseInterface[]
      *
      * @throws \InvalidArgumentException
      * @throws Exception\MultiHttpAdapterException
      */
-    public function sendRequests(array $requests);
+    public function sendRequests(array $requests, array $options = []);
 
     /**
      * Returns the name
