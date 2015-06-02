@@ -9,14 +9,15 @@
  * file that was distributed with this source code.
  */
 
-namespace Http\Adapter;
+namespace Http\Adapter\Exception;
 
-use Http\Adapter\Message\ResponseInterface;
+use Http\Adapter\Exception;
+use Psr\Http\Message\ResponseInterface;
 
 /**
  * @author GeLo <geloen.eric@gmail.com>
  */
-class MultiHttpAdapterException extends \Exception
+class MultiHttpAdapterException extends \Exception implements Exception
 {
     /**
      * @var HttpAdapterException[]
@@ -41,7 +42,7 @@ class MultiHttpAdapterException extends \Exception
     }
 
     /**
-     * Returns the exceptions
+     * Returns all exceptions
      *
      * @return HttpAdapterException[]
      */
@@ -51,7 +52,7 @@ class MultiHttpAdapterException extends \Exception
     }
 
     /**
-     * Checks if there is a specific exception
+     * Checks if a specific exception exists
      *
      * @param HttpAdapterException $exception
      *
@@ -63,7 +64,7 @@ class MultiHttpAdapterException extends \Exception
     }
 
     /**
-     * Checks if there are exceptions
+     * Checks if any exception exists
      *
      * @return boolean
      */
@@ -129,7 +130,7 @@ class MultiHttpAdapterException extends \Exception
     }
 
     /**
-     * Clears the exceptions
+     * Clears all exceptions
      */
     public function clearExceptions()
     {
@@ -137,7 +138,7 @@ class MultiHttpAdapterException extends \Exception
     }
 
     /**
-     * Returns the responses
+     * Returns all responses
      *
      * @return ResponseInterface[]
      */
@@ -147,7 +148,7 @@ class MultiHttpAdapterException extends \Exception
     }
 
     /**
-     * Checks if there is a specific response
+     * Checks if a specific response exists
      *
      * @param ResponseInterface $response
      *
@@ -159,7 +160,7 @@ class MultiHttpAdapterException extends \Exception
     }
 
     /**
-     * Checks if there are responses
+     * Checks if any response exists
      *
      * @return boolean
      */
@@ -225,7 +226,7 @@ class MultiHttpAdapterException extends \Exception
     }
 
     /**
-     * Clears the responses
+     * Clears all responses
      */
     public function clearResponses()
     {

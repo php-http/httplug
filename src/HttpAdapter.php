@@ -11,142 +11,44 @@
 
 namespace Http\Adapter;
 
-use Psr\Http\Message\StreamInterface;
-use Psr\Http\Message\UriInterface;
+use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
 
 /**
  * @author GeLo <geloen.eric@gmail.com>
  */
-interface HttpAdapter extends PsrHttpAdapter
+interface HttpAdapter
 {
     /**
-     * Sends a GET request
+     * Sends a PSR request
      *
-     * @param string|UriInterface $uri
-     * @param string[]            $headers
-     *
-     * @throws \InvalidArgumentException
-     * @throws HttpAdapterException
+     * @param RequestInterface $request
+     * @param array            $options
      *
      * @return ResponseInterface
+     *
+     * @throws \InvalidArgumentException
+     * @throws Exception\HttpAdapterException
      */
-    public function get($uri, array $headers = []);
+    public function sendRequest(RequestInterface $request, array $options = []);
 
     /**
-     * Sends an HEAD request
+     * Sends PSR requests
      *
-     * @param string|UriInterface $uri
-     * @param string[]            $headers
+     * @param RequestInterface[] $requests
+     * @param array              $options
+     *
+     * @return ResponseInterface[]
      *
      * @throws \InvalidArgumentException
-     * @throws HttpAdapterException
-     *
-     * @return ResponseInterface
+     * @throws Exception\MultiHttpAdapterException
      */
-    public function head($uri, array $headers = []);
+    public function sendRequests(array $requests, array $options = []);
 
     /**
-     * Sends a TRACE request
+     * Returns the name
      *
-     * @param string|UriInterface $uri
-     * @param string[]            $headers
-     *
-     * @throws \InvalidArgumentException
-     * @throws HttpAdapterException
-     *
-     * @return ResponseInterface
+     * @return string
      */
-    public function trace($uri, array $headers = []);
-
-    /**
-     * Sends a POST request
-     *
-     * @param string|UriInterface          $uri
-     * @param string[]                     $headers
-     * @param array|string|StreamInterface $data
-     * @param array                        $files
-     *
-     * @throws \InvalidArgumentException
-     * @throws HttpAdapterException
-     *
-     * @return ResponseInterface
-     */
-    public function post($uri, array $headers = [], $data = [], array $files = []);
-
-    /**
-     * Sends a PUT request
-     *
-     * @param string|UriInterface          $uri
-     * @param string[]                     $headers
-     * @param array|string|StreamInterface $data
-     * @param array                        $files
-     *
-     * @throws \InvalidArgumentException
-     * @throws HttpAdapterException
-     *
-     * @return ResponseInterface
-     */
-    public function put($uri, array $headers = [], $data = [], array $files = []);
-
-    /**
-     * Sends a PATCH request
-     *
-     * @param string|UriInterface          $uri
-     * @param string[]                     $headers
-     * @param array|string|StreamInterface $data
-     * @param array                        $files
-     *
-     * @throws \InvalidArgumentException
-     * @throws HttpAdapterException
-     *
-     * @return ResponseInterface
-     */
-    public function patch($uri, array $headers = [], $data = [], array $files = []);
-
-    /**
-     * Sends a DELETE request
-     *
-     * @param string|UriInterface          $uri
-     * @param string[]                     $headers
-     * @param array|string|StreamInterface $data
-     * @param array                        $files
-     *
-     * @throws \InvalidArgumentException
-     * @throws HttpAdapterException
-     *
-     * @return ResponseInterface
-     */
-    public function delete($uri, array $headers = [], $data = [], array $files = []);
-
-    /**
-     * Sends an OPTIONS request
-     *
-     * @param string|UriInterface          $uri
-     * @param string[]                     $headers
-     * @param array|string|StreamInterface $data
-     * @param array                        $files
-     *
-     * @throws \InvalidArgumentException
-     * @throws HttpAdapterException
-     *
-     * @return ResponseInterface
-     */
-    public function options($uri, array $headers = [], $data = [], array $files = []);
-
-    /**
-     * Sends a request
-     *
-     * @param string                       $method
-     * @param string|UriInterface          $uri
-     * @param string[]                     $headers
-     * @param array|string|StreamInterface $data
-     * @param array                        $files
-     *
-     * @throws \InvalidArgumentException
-     * @throws HttpAdapterException
-     *
-     * @return ResponseInterface
-     */
-    public function send($method, $uri, array $headers = [], $data = [], array $files = []);
+    public function getName();
 }
