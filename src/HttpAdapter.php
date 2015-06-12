@@ -44,11 +44,4 @@ interface HttpAdapter
      * @throws Exception\MultiHttpAdapterException
      */
     public function sendRequests(array $requests, array $options = []);
-
-    /**
-     * Returns the name
-     *
-     * @return string
-     */
-    public function getName();
 }
