@@ -1,6 +1,6 @@
 {
     "name": "php-http/adapter",
-    "description": "HTTP adapter contract",
+    "description": "HTTP Adapter interfaces",
     "license": "MIT",
     "keywords": ["http", "adapter"],
     "homepage": "http://php-http.org",
@@ -25,7 +25,7 @@
     },
     "extra": {
         "branch-alias": {
-            "dev-master": "0.1-dev"
+            "dev-master": "0.2-dev"
         }
     }
 }
