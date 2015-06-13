@@ -15,14 +15,14 @@ please be as precise as possible. Here is a little list of required information:
 
 ## Security issues
 
-If you discover any security related issues, please contact us at [security@php-http.org](mailto:security@php-http.org) instead of submitting an issue on Github.
+If you discover any security related issues, please contact us at [security@php-http.org](mailto:security@php-http.org) instead of submitting an issue on Github. This allows us to fix the issue and release a security hotfix without publicly disclosing the vulnerability.
 
 
 ## Feature requests
 
 If you think a feature is missing, please report it or even better: implement it :). If you report it, describe the more
 precisely what you would like to see implemented and we will discuss what is the best approach for it. If you can do
-some search before submitting it and link the resources to your description, you're awesome! It will allow us to more
+some research before submitting it and link the resources to your description, you're awesome! It will allow us to more
 easily understood/implement it.
 
 

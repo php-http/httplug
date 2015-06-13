@@ -23,6 +23,11 @@ This is the contract package for HTTP Adapter. It should be used when implementi
 There is also a virtual package which is versioned together with this contract package: [php-http/adapter-implementation](https://packagist.org/providers/php-http/adapter-implementation).
 
 
+## Documentation
+
+Please see the [official documentation](http://php-http.readthedocs.org/en/latest/).
+
+
 ## Contributing
 
 Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
