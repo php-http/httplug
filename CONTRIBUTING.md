@@ -41,7 +41,11 @@ Then install the dependencies through [Composer](https://getcomposer.org/):
 $ composer install
 ```
 
-Write code and tests. When you are ready, find the testing command in the [README](README.md) and execute it. (This is usually [PHPUnit](http://phpunit.de/) or [PHPSpec](http://phpspec.net/))
+Write code and tests. When you are ready, run the tests. (This is usually [PHPUnit](http://phpunit.de/) or [PHPSpec](http://phpspec.net/))
+
+``` bash
+$ composer test
+```
 
 When you are ready with the code, tested it and documented it, you can commit and push it with the following commands:
 
