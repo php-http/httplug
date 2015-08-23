@@ -1,8 +1,8 @@
 {
-    "name": "php-http/adapter",
-    "description": "HTTP Adapter interfaces",
+    "name": "php-http/client",
+    "description": "HTTP Client interfaces",
     "license": "MIT",
-    "keywords": ["http", "adapter"],
+    "keywords": ["http", "client"],
     "homepage": "http://php-http.org",
     "authors": [
         {
@@ -20,7 +20,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Http\\Adapter\\": "src/"
+            "Http\\Client\\": "src/"
         }
     },
     "extra": {
