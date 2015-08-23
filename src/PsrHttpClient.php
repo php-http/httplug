@@ -20,8 +20,7 @@ interface PsrHttpClient
      *
      * @return ResponseInterface
      *
-     * @throws \InvalidArgumentException
-     * @throws Exception\HttpClientException
+     * @throws Exception
      */
     public function sendRequest(RequestInterface $request, array $options = []);
 
@@ -33,8 +32,7 @@ interface PsrHttpClient
      *
      * @return ResponseInterface[]
      *
-     * @throws \InvalidArgumentException
-     * @throws Exception\MultiHttpClientException
+     * @throws Exception
      */
     public function sendRequests(array $requests, array $options = []);
 }
