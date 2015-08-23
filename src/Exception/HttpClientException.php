@@ -80,23 +80,4 @@ class HttpClientException extends \Exception implements Exception
     {
         $this->response = $response;
     }
-
-    /**
-     * @param string          $uri
-     * @param string          $adapterName
-     * @param \Exception|null $previous
-     */
-    public static function cannotFetchUri($uri, $adapterName, \Exception $previous = null)
-    {
-        $message = sprintf(
-            'An error occurred when fetching the URI "%s" with the adapter "%s" ("%s").',
-            $uri,
-            $adapterName,
-            isset($previous) ? $previous->getMessage() : ''
-        );
-
-        $code = isset($previous) ? $previous->getCode() : 0;
-
-        return new self($message, $code, $previous);
-    }
 }
