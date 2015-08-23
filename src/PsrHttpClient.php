@@ -1,23 +1,16 @@
 <?php
 
-/*
- * This file is part of the Http Adapter package.
- *
- * (c) Eric GELOEN <geloen.eric@gmail.com>
- *
- * For the full copyright and license information, please read the LICENSE
- * file that was distributed with this source code.
- */
-
-namespace Http\Adapter;
+namespace Http\Client;
 
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
 
 /**
+ * Sends one or more PSR-7 Request
+ *
  * @author GeLo <geloen.eric@gmail.com>
  */
-interface HttpAdapter
+interface PsrHttpClient
 {
     /**
      * Sends a PSR request
@@ -28,7 +21,7 @@ interface HttpAdapter
      * @return ResponseInterface
      *
      * @throws \InvalidArgumentException
-     * @throws Exception\HttpAdapterException
+     * @throws Exception\HttpClientException
      */
     public function sendRequest(RequestInterface $request, array $options = []);
 
@@ -41,14 +34,7 @@ interface HttpAdapter
      * @return ResponseInterface[]
      *
      * @throws \InvalidArgumentException
-     * @throws Exception\MultiHttpAdapterException
+     * @throws Exception\MultiHttpClientException
      */
     public function sendRequests(array $requests, array $options = []);
-
-    /**
-     * Returns the name
-     *
-     * @return string
-     */
-    public function getName();
 }
