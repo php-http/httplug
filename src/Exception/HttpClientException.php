@@ -9,7 +9,7 @@ use Psr\Http\Message\ResponseInterface;
 /**
  * @author GeLo <geloen.eric@gmail.com>
  */
-class HttpClientException extends \Exception implements Exception
+class HttpClientException extends \RuntimeException implements Exception
 {
     /**
      * @var RequestInterface|null

@@ -8,10 +8,10 @@ use Psr\Http\Message\ResponseInterface;
 /**
  * @author GeLo <geloen.eric@gmail.com>
  */
-class MultiHttpClientException extends \Exception implements Exception
+class MultiHttpClientException extends \RuntimeException implements Exception
 {
     /**
-     * @var HttpAdapterException[]
+     * @var HttpClientException[]
      */
     private $exceptions;
 
@@ -21,8 +21,8 @@ class MultiHttpClientException extends \Exception implements Exception
     private $responses;
 
     /**
-     * @param HttpAdapterException[] $exceptions
-     * @param ResponseInterface[]    $responses
+     * @param HttpClientException[] $exceptions
+     * @param ResponseInterface[]   $responses
      */
     public function __construct(array $exceptions = [], array $responses = [])
     {
@@ -35,7 +35,7 @@ class MultiHttpClientException extends \Exception implements Exception
     /**
      * Returns all exceptions
      *
-     * @return HttpAdapterException[]
+     * @return HttpClientException[]
      */
     public function getExceptions()
     {
@@ -45,11 +45,11 @@ class MultiHttpClientException extends \Exception implements Exception
     /**
      * Checks if a specific exception exists
      *
-     * @param HttpAdapterException $exception
+     * @param HttpClientException $exception
      *
      * @return boolean TRUE if there is the exception else FALSE.
      */
-    public function hasException(HttpAdapterException $exception)
+    public function hasException(HttpClientException $exception)
     {
         return array_search($exception, $this->exceptions, true) !== false;
     }
@@ -67,7 +67,7 @@ class MultiHttpClientException extends \Exception implements Exception
     /**
      * Sets the exceptions
      *
-     * @param HttpAdapterException[] $exceptions
+     * @param HttpClientException[] $exceptions
      */
     public function setExceptions(array $exceptions)
     {
@@ -78,9 +78,9 @@ class MultiHttpClientException extends \Exception implements Exception
     /**
      * Adds an exception
      *
-     * @param HttpAdapterException $exception
+     * @param HttpClientException $exception
      */
-    public function addException(HttpAdapterException $exception)
+    public function addException(HttpClientException $exception)
     {
         $this->exceptions[] = $exception;
     }
@@ -88,7 +88,7 @@ class MultiHttpClientException extends \Exception implements Exception
     /**
      * Adds some exceptions
      *
-     * @param HttpAdapterException[] $exceptions
+     * @param HttpClientException[] $exceptions
      */
     public function addExceptions(array $exceptions)
     {
@@ -100,9 +100,9 @@ class MultiHttpClientException extends \Exception implements Exception
     /**
      * Removes an exception
      *
-     * @param HttpAdapterException $exception
+     * @param HttpClientException $exception
      */
-    public function removeException(HttpAdapterException $exception)
+    public function removeException(HttpClientException $exception)
     {
         unset($this->exceptions[array_search($exception, $this->exceptions, true)]);
         $this->exceptions = array_values($this->exceptions);
@@ -111,7 +111,7 @@ class MultiHttpClientException extends \Exception implements Exception
     /**
      * Removes some exceptions
      *
-     * @param HttpAdapterException[] $exceptions
+     * @param HttpClientException[] $exceptions
      */
     public function removeExceptions(array $exceptions)
     {
