@@ -1,23 +1,14 @@
 <?php
 
-/*
- * This file is part of the Http Adapter package.
- *
- * (c) Eric GELOEN <geloen.eric@gmail.com>
- *
- * For the full copyright and license information, please read the LICENSE
- * file that was distributed with this source code.
- */
+namespace Http\Client\Exception;
 
-namespace Http\Adapter\Exception;
-
-use Http\Adapter\Exception;
+use Http\Client\Exception;
 use Psr\Http\Message\ResponseInterface;
 
 /**
  * @author GeLo <geloen.eric@gmail.com>
  */
-class MultiHttpAdapterException extends \Exception implements Exception
+class MultiHttpClientException extends \Exception implements Exception
 {
     /**
      * @var HttpAdapterException[]
