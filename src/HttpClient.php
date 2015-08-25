@@ -9,6 +9,8 @@ use Psr\Http\Message\ResponseInterface;
 /**
  * Interface for HTTP conventional methods
  *
+ * Use this interface when you do not have PSR-7 RequestInterface instances available.
+ *
  * @author Márk Sági-Kazár mark.sagikazar@gmail.com>
  */
 interface HttpClient
