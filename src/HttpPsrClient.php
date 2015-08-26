@@ -10,7 +10,7 @@ use Psr\Http\Message\ResponseInterface;
  *
  * @author GeLo <geloen.eric@gmail.com>
  */
-interface PsrHttpClient
+interface HttpPsrClient
 {
     /**
      * Sends a PSR request

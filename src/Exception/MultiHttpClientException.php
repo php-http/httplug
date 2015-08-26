@@ -2,13 +2,12 @@
 
 namespace Http\Client\Exception;
 
-use Http\Client\Exception;
 use Psr\Http\Message\ResponseInterface;
 
 /**
  * @author GeLo <geloen.eric@gmail.com>
  */
-class MultiHttpClientException extends \RuntimeException implements Exception
+class MultiHttpClientException extends RuntimeException
 {
     /**
      * @var HttpClientException[]
