@@ -45,4 +45,40 @@ class HttpException extends RequestException
     {
         return $this->response;
     }
+
+    /**
+     * Factory method to create a new exception with a normalized error message
+     *
+     * @param RequestInterface  $request
+     * @param ResponseInterface $response
+     * @param \Exception|null   $previous
+     *
+     * @return HttpException
+     */
+    public static function create(RequestInterface $request, ResponseInterface $response, \Exception $previous = null)
+    {
+        $code = floor($response->getStatusCode() / 100);
+
+        if ($code == '4') {
+            $message = 'Client error';
+            $className = __NAMESPACE__ . '\\ClientException';
+        } elseif ($code == '5') {
+            $message = 'Server error';
+            $className = __NAMESPACE__ . '\\ServerException';
+        } else {
+            $message = 'Unsuccessful response';
+            $className = __CLASS__;
+        }
+
+        $message = sprintf(
+            '%s [url] %s [http method] %s [status code] %s [reason phrase] %',
+            $message,
+            $request->getRequestTarget(),
+            $request->getMethod(),
+            $response->getStatusCode(),
+            $response->getReasonPhrase()
+        );
+
+        return new $className($message, $request, $response, $previous);
+    }
 }

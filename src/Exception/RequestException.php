@@ -37,4 +37,19 @@ class RequestException extends TransferException
     {
         return $this->request;
     }
+
+    /**
+     * @param RequestInterface $request
+     * @param \Exception       $e
+     *
+     * @return RequestException
+     */
+    public static function wrapException(RequestInterface $request, \Exception $e)
+    {
+        if (!$e instanceof RequestException) {
+            $e = new RequestException($e->getMessage(), $request, $e);
+        }
+
+        return $e;
+    }
 }
