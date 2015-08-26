@@ -2,6 +2,9 @@
 
 [![Latest Version](https://img.shields.io/github/release/php-http/client.svg?style=flat-square)](https://github.com/php-http/client/releases)
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE)
+[![Build Status](https://img.shields.io/travis/php-http/client.svg?style=flat-square)](https://travis-ci.org/php-http/client)
+[![Code Coverage](https://img.shields.io/scrutinizer/coverage/g/php-http/client.svg?style=flat-square)](https://scrutinizer-ci.com/g/php-http/client)
+[![Quality Score](https://img.shields.io/scrutinizer/g/php-http/client.svg?style=flat-square)](https://scrutinizer-ci.com/g/php-http/client)
 [![Total Downloads](https://img.shields.io/packagist/dt/php-http/client.svg?style=flat-square)](https://packagist.org/packages/php-http/client)
 
 [![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/php-http/adapter?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
@@ -30,6 +33,13 @@ There is also a virtual package which is versioned together with this contract p
 ## Documentation
 
 Please see the [official documentation](http://php-http.readthedocs.org/en/latest/).
+
+
+## Testing
+
+``` bash
+$ composer test
+```
 
 
 ## Contributing

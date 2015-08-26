@@ -16,7 +16,7 @@ trait HttpMethods
      */
     public function get($uri, array $headers = [], array $options = [])
     {
-        return $this->send('GET', $uri, $headers, $options);
+        return $this->send('GET', $uri, $headers, null, $options);
     }
 
     /**
@@ -24,7 +24,7 @@ trait HttpMethods
      */
     public function head($uri, array $headers = [], array $options = [])
     {
-        return $this->send('HEAD', $uri, $headers, $options);
+        return $this->send('HEAD', $uri, $headers, null, $options);
     }
 
     /**
@@ -32,7 +32,7 @@ trait HttpMethods
      */
     public function trace($uri, array $headers = [], array $options = [])
     {
-        return $this->send('TRACE', $uri, $headers, $options);
+        return $this->send('TRACE', $uri, $headers, null, $options);
     }
 
     /**
