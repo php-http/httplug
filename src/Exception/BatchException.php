@@ -27,8 +27,21 @@ final class BatchException extends TransferException
     {
         parent::__construct('An error occurred when sending multiple requests.');
 
-        $this->setExceptions($exceptions);
-        $this->setResponses($responses);
+        foreach ($exceptions as $e) {
+            if (!$e instanceof TransferException) {
+                throw new InvalidArgumentException('Exception is not an instanceof Http\Client\Exception\TransferException');
+            }
+        }
+
+        foreach ($responses as $response) {
+            if (!$response instanceof ResponseInterface) {
+                throw new InvalidArgumentException('Response is not an instanceof Psr\Http\Message\ResponseInterface');
+            }
+        }
+
+
+        $this->exceptions = $exceptions;
+        $this->responses = $responses;
     }
 
     /**

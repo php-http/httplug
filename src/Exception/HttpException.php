@@ -71,7 +71,7 @@ class HttpException extends RequestException
         }
 
         $message = sprintf(
-            '%s [url] %s [http method] %s [status code] %s [reason phrase] %',
+            '%s [url] %s [http method] %s [status code] %s [reason phrase] %s',
             $message,
             $request->getRequestTarget(),
             $request->getMethod(),
