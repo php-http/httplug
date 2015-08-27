@@ -5,7 +5,7 @@ namespace Http\Client;
 use Psr\Http\Message\StreamInterface;
 
 /**
- * Allows a more input types for body data
+ * Allows special input as body
  *
  * @author Márk Sági-Kazár <mark.sagikazar@gmail.com>
  */
@@ -14,7 +14,7 @@ interface Body
     /**
      * Returns a set of headers which is needed to correctly send the body
      *
-     * Note: these headers SHOULD be overwritten if any matching header is passed manually
+     * Note: these headers get overwritten by headers manually passed to the client
      *
      * Content-Length is calculated automatically if possible
      *
