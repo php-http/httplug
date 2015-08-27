@@ -1,0 +1,5 @@
+suites:
+  client_suite:
+    namespace: Http\Client
+    psr4_prefix: Http\Client
+formatter.name: pretty

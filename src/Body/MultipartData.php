@@ -57,7 +57,7 @@ class MultipartData extends Multipart
 
         $body .= sprintf(
             "--%s\r\nContent-Disposition: form-data; name=\"%s\"\r\n\r\n%s\r\n",
-            $this->files->getBoundary(),
+            $this->boundary,
             $name,
             $data
         );
