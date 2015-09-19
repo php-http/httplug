@@ -21,7 +21,7 @@ final class BatchException extends TransferException
 
     /**
      * @param TransferException[] $exceptions
-     * @param ResponseInterface[]   $responses
+     * @param ResponseInterface[] $responses
      */
     public function __construct(array $exceptions = [], array $responses = [])
     {
