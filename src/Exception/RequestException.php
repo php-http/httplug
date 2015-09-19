@@ -5,7 +5,9 @@ namespace Http\Client\Exception;
 use Psr\Http\Message\RequestInterface;
 
 /**
- * Thrown when a request is available
+ * Base exception for when a request failed.
+ *
+ * This can be because of network problems or the status code of the response.
  *
  * @author Márk Sági-Kazár <mark.sagikazar@gmail.com>
  */

@@ -6,7 +6,9 @@ use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
 
 /**
- * Thrown when both a request and a response are available
+ * Thrown when a response was received but has an error status code.
+ *
+ * This exception always provides the request and response objects.
  *
  * @author Márk Sági-Kazár <mark.sagikazar@gmail.com>
  */

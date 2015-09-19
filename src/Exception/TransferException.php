@@ -3,7 +3,7 @@
 namespace Http\Client\Exception;
 
 /**
- * Thrown when an error related to sending/receiving the request/response occurs
+ * Base exception for all php-http exceptions.
  *
  * @author Márk Sági-Kazár <mark.sagikazar@gmail.com>
  */
