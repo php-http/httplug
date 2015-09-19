@@ -9,5 +9,4 @@ namespace Http\Client\Exception;
  */
 class ClientException extends HttpException
 {
-
 }

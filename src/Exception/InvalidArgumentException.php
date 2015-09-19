@@ -11,5 +11,4 @@ use Http\Client\Exception;
  */
 class InvalidArgumentException extends \InvalidArgumentException implements Exception
 {
-
 }

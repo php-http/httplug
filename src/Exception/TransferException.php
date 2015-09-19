@@ -9,5 +9,4 @@ namespace Http\Client\Exception;
  */
 class TransferException extends RuntimeException
 {
-
 }
