@@ -32,10 +32,10 @@ class HttpException extends RequestException
         \Exception $previous = null
     ) {
         $this->response = $response;
+        $this->code = $response->getStatusCode();
+
 
         parent::__construct($message, $request, $previous);
-
-        $this->code = $response->getStatusCode();
     }
 
     /**
@@ -59,12 +59,12 @@ class HttpException extends RequestException
      */
     public static function create(RequestInterface $request, ResponseInterface $response, \Exception $previous = null)
     {
-        $code = floor($response->getStatusCode() / 100);
+        $code = $response->getStatusCode();
 
-        if ($code == '4') {
+        if ($code >= 400 && $code < 500) {
             $message = 'Client error';
             $className = __NAMESPACE__ . '\\ClientException';
-        } elseif ($code == '5') {
+        } elseif ($code >= 500 && $code < 600) {
             $message = 'Server error';
             $className = __NAMESPACE__ . '\\ServerException';
         } else {
