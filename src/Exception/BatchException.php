@@ -2,10 +2,8 @@
 
 namespace Http\Client\Exception;
 
-use Psr\Http\Message\ResponseInterface;
-
 /**
- * @author GeLo <geloen.eric@gmail.com>
+ * @author Márk Sági-Kazár <mark.sagikazar@gmail.com>
  */
 final class BatchException extends TransferException
 {
@@ -15,15 +13,9 @@ final class BatchException extends TransferException
     private $exceptions;
 
     /**
-     * @var ResponseInterface[]
-     */
-    private $responses;
-
-    /**
      * @param TransferException[] $exceptions
-     * @param ResponseInterface[] $responses
      */
-    public function __construct(array $exceptions = [], array $responses = [])
+    public function __construct(array $exceptions = [])
     {
         parent::__construct('An error occurred when sending multiple requests.');
 
@@ -33,15 +25,7 @@ final class BatchException extends TransferException
             }
         }
 
-        foreach ($responses as $response) {
-            if (!$response instanceof ResponseInterface) {
-                throw new InvalidArgumentException('Response is not an instanceof Psr\Http\Message\ResponseInterface');
-            }
-        }
-
-
         $this->exceptions = $exceptions;
-        $this->responses = $responses;
     }
 
     /**
@@ -74,37 +58,5 @@ final class BatchException extends TransferException
     public function hasExceptions()
     {
         return !empty($this->exceptions);
-    }
-
-    /**
-     * Returns all responses
-     *
-     * @return ResponseInterface[]
-     */
-    public function getResponses()
-    {
-        return $this->responses;
-    }
-
-    /**
-     * Checks if a specific response exists
-     *
-     * @param ResponseInterface $response
-     *
-     * @return boolean
-     */
-    public function hasResponse(ResponseInterface $response)
-    {
-        return array_search($response, $this->responses, true) !== false;
-    }
-
-    /**
-     * Checks if any response exists
-     *
-     * @return boolean
-     */
-    public function hasResponses()
-    {
-        return !empty($this->responses);
     }
 }
