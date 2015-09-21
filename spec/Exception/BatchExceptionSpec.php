@@ -2,15 +2,16 @@
 
 namespace spec\Http\Client\Exception;
 
-use Http\Client\Exception\TransferException;
-use Psr\Http\Message\ResponseInterface;
+use Http\Client\BatchResult;
 use PhpSpec\ObjectBehavior;
 
 class BatchExceptionSpec extends ObjectBehavior
 {
-    function let(TransferException $e, ResponseInterface $response)
+    private $result;
+
+    function let()
     {
-        $this->beConstructedWith([$e], [$response]);
+        $this->beConstructedWith($this->result = new BatchResult());
     }
 
     function it_is_initializable()
@@ -18,24 +19,14 @@ class BatchExceptionSpec extends ObjectBehavior
         $this->shouldHaveType('Http\Client\Exception\BatchException');
     }
 
-    function it_is_a_transfer_exception()
+    function it_is_an_exception()
     {
-        $this->shouldHaveType('Http\Client\Exception\TransferException');
+        $this->shouldImplement('Http\Client\Exception');
+        $this->shouldHaveType('Exception');
     }
 
-    function it_has_exceptions(TransferException $e, TransferException $e2)
+    function it_has_a_result()
     {
-        $this->getExceptions()->shouldReturn([$e]);
-        $this->hasException($e)->shouldReturn(true);
-        $this->hasException($e2)->shouldReturn(false);
-        $this->hasExceptions()->shouldReturn(true);
-    }
-
-    function it_has_responses(ResponseInterface $response, ResponseInterface $response2)
-    {
-        $this->getResponses()->shouldReturn([$response]);
-        $this->hasResponse($response)->shouldReturn(true);
-        $this->hasResponse($response2)->shouldReturn(false);
-        $this->hasResponses()->shouldReturn(true);
+        $this->getResult()->shouldReturn($this->result);
     }
 }

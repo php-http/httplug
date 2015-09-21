@@ -2,61 +2,49 @@
 
 namespace Http\Client\Exception;
 
+use Http\Client\BatchResult;
+
 /**
  * @author Márk Sági-Kazár <mark.sagikazar@gmail.com>
  */
-final class BatchException extends TransferException
+final class BatchException extends RuntimeException
 {
     /**
-     * @var TransferException[]
+     * @var BatchResult
      */
-    private $exceptions;
+    private $result;
 
     /**
-     * @param TransferException[] $exceptions
+     * @param BatchResult $result
      */
-    public function __construct(array $exceptions = [])
+    public function __construct(BatchResult $result)
     {
-        parent::__construct('An error occurred when sending multiple requests.');
+        $this->result = $result;
+    }
 
-        foreach ($exceptions as $e) {
-            if (!$e instanceof TransferException) {
-                throw new InvalidArgumentException('Exception is not an instanceof Http\Client\Exception\TransferException');
-            }
+    /**
+     * Returns successful responses or null
+     *
+     * @return BatchResult
+     */
+    public function getResult()
+    {
+        return $this->result;
+    }
+
+    /**
+     * Decides whether the result has any failures
+     *
+     * @param BatchResult $result
+     *
+     * @return BatchResult|BatchException
+     */
+    public static function decideReturnValue(BatchResult $result)
+    {
+        if ($result->hasExceptions()) {
+            return new self($result);
         }
 
-        $this->exceptions = $exceptions;
-    }
-
-    /**
-     * Returns all exceptions
-     *
-     * @return TransferException[]
-     */
-    public function getExceptions()
-    {
-        return $this->exceptions;
-    }
-
-    /**
-     * Checks if a specific exception exists
-     *
-     * @param TransferException $exception
-     *
-     * @return boolean TRUE if there is the exception else FALSE.
-     */
-    public function hasException(TransferException $exception)
-    {
-        return array_search($exception, $this->exceptions, true) !== false;
-    }
-
-    /**
-     * Checks if any exception exists
-     *
-     * @return boolean
-     */
-    public function hasExceptions()
-    {
-        return !empty($this->exceptions);
+        return $result;
     }
 }
