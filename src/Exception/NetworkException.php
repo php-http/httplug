@@ -7,6 +7,6 @@ namespace Http\Client\Exception;
  *
  * @author Márk Sági-Kazár <mark.sagikazar@gmail.com>
  */
-final class NetworkException extends RequestException
+class NetworkException extends RequestException
 {
 }
