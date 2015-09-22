@@ -22,9 +22,14 @@ class BatchExceptionSpec extends ObjectBehavior
 
     function it_has_a_result()
     {
-        $this->getResult()->shouldReturn(null);
         $this->setResult($result = new BatchResult());
         $this->getResult()->shouldReturn($result);
+    }
+
+    function it_throws_an_exception_if_the_result_is_already_set()
+    {
+        $this->getResult()->shouldHaveType('Http\Client\BatchResult');
+        $this->shouldThrow('Http\Client\Exception\InvalidArgumentException')->duringSetResult(new BatchResult());
     }
 
     function it_has_an_exception_for_a_request(RequestInterface $request, Exception $exception)
