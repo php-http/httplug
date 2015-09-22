@@ -22,17 +22,23 @@ class BatchResultSpec extends ObjectBehavior
         $new->getResponses()->shouldReturn([$response]);
     }
 
+    function it_has_a_responses(RequestInterface $request, ResponseInterface $response)
+    {
+        $new = $this->addResponse($request, $response);
+
+        $this->hasResponses()->shouldReturn(false);
+        $this->getResponses()->shouldReturn([]);
+        $new->hasResponses()->shouldReturn(true);
+        $new->getResponses()->shouldReturn([$response]);
+    }
+
     function it_has_a_response_for_a_request(RequestInterface $request, ResponseInterface $response)
     {
         $new = $this->addResponse($request, $response);
 
         $this->getResponseFor($request)->shouldReturn(null);
-        $this->hasResponses()->shouldReturn(false);
         $this->hasResponseFor($request)->shouldReturn(false);
-        $this->getResponses()->shouldReturn([]);
         $new->getResponseFor($request)->shouldReturn($response);
-        $new->hasResponses()->shouldReturn(true);
         $new->hasResponseFor($request)->shouldReturn(true);
-        $new->getResponses()->shouldReturn([$response]);
     }
 }
