@@ -34,7 +34,7 @@ class BatchExceptionSpec extends ObjectBehavior
 
     function it_has_an_exception_for_a_request(RequestInterface $request, Exception $exception)
     {
-        $this->getExceptionFor($request)->shouldReturn(null);
+        $this->shouldThrow('Http\Client\Exception\InvalidArgumentException')->duringGetExceptionFor($request);
         $this->hasExceptionFor($request)->shouldReturn(false);
 
         $this->addException($request, $exception);

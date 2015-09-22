@@ -105,17 +105,21 @@ final class BatchException extends RuntimeException
     }
 
     /**
-     * Returns an exception for a request or null if not found
+     * Returns an exception for a request
      *
      * @param RequestInterface $request
      *
-     * @return Exception|null
+     * @return Exception
+     *
+     * @throws InvalidArgumentException
      */
     public function getExceptionFor(RequestInterface $request)
     {
-        if ($this->exceptions->contains($request)) {
-            return $this->exceptions[$request];
+        if (!$this->exceptions->contains($request)) {
+            throw new InvalidArgumentException('No exception can be found for the given request');
         }
+
+        return $this->exceptions[$request];
     }
 
     /**

@@ -2,6 +2,7 @@
 
 namespace Http\Client;
 
+use Http\Client\Exception\InvalidArgumentException;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
 
@@ -39,17 +40,21 @@ final class BatchResult
     }
 
     /**
-     * Returns a response of a request or null if not found
+     * Returns a response of a request
      *
      * @param RequestInterface $request
      *
-     * @return ResponseInterface|null
+     * @return ResponseInterface
+     *
+     * @throws InvalidArgumentException
      */
     public function getResponseFor(RequestInterface $request)
     {
-        if ($this->responses->contains($request)) {
-            return $this->responses[$request];
+        if (!$this->responses->contains($request)) {
+            throw new InvalidArgumentException('No response can be found for the given request');
         }
+
+        return $this->responses[$request];
     }
 
     /**
