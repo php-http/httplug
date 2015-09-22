@@ -28,10 +28,13 @@ interface HttpPsrClient
     /**
      * Sends PSR requests
      *
+     * If one or more requests led to an exception, the BatchException is thrown.
+     * The BatchException also gives access to the BatchResult for the successful responses.
+     *
      * @param RequestInterface[] $requests
      * @param array              $options
      *
-     * @return BatchResult
+     * @return BatchResult If all requests where successful.
      *
      * @throws Exception
      * @throws BatchException

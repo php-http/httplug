@@ -6,7 +6,7 @@ use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
 
 /**
- * Successful responses and exceptions returned from parallel request execution
+ * Successful responses returned from parallel request execution
  *
  * @author Márk Sági-Kazár <mark.sagikazar@gmail.com>
  */

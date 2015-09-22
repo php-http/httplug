@@ -7,7 +7,11 @@ use Http\Client\Exception;
 use Psr\Http\Message\RequestInterface;
 
 /**
- * @author Márk Sági-Kazár <mark.sagikazar@gmail.com>
+ * This exception is thrown when a batch of requests led to at least one failure.
+ *
+ * It holds the response/exception pairs and gives access to a BatchResult with the successful responses.
+ *
+*@author Márk Sági-Kazár <mark.sagikazar@gmail.com>
  */
 final class BatchException extends RuntimeException
 {
@@ -27,12 +31,18 @@ final class BatchException extends RuntimeException
     }
 
     /**
-     * Returns a list BatchResult which contains succesful responses
+     * Returns the BatchResult that contains those responses that where successful.
+     *
+     * Note that the BatchResult may contains 0 responses if all requests failed.
      *
      * @return BatchResult
      */
     public function getResult()
     {
+        if (!isset($this->result)) {
+            $this->result = new BatchResult();
+        }
+
         return $this->result;
     }
 
@@ -41,10 +51,16 @@ final class BatchException extends RuntimeException
      *
      * @param BatchResult $result
      *
+     * @throws InvalidArgumentException If the BatchResult is already set
+     *
      * @internal
      */
     public function setResult(BatchResult $result)
     {
+        if (isset($this->result)) {
+            throw new InvalidArgumentException('BatchResult is already set');
+        }
+
         $this->result = $result;
     }
 
@@ -57,7 +73,7 @@ final class BatchException extends RuntimeException
      */
     public function isSuccessful(RequestInterface $request)
     {
-        return isset($this->result) && $this->result->hasResponseFor($request);
+        return $this->getResult()->hasResponseFor($request);
     }
 
     /**
