@@ -31,20 +31,4 @@ final class BatchException extends RuntimeException
     {
         return $this->result;
     }
-
-    /**
-     * Decides whether the result has any failures
-     *
-     * @param BatchResult $result
-     *
-     * @return BatchResult|BatchException
-     */
-    public static function decideReturnValue(BatchResult $result)
-    {
-        if ($result->hasExceptions()) {
-            return new self($result);
-        }
-
-        return $result;
-    }
 }
