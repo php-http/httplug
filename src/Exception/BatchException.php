@@ -3,6 +3,8 @@
 namespace Http\Client\Exception;
 
 use Http\Client\BatchResult;
+use Http\Client\Exception;
+use Psr\Http\Message\RequestInterface;
 
 /**
  * @author Márk Sági-Kazár <mark.sagikazar@gmail.com>
@@ -15,20 +17,121 @@ final class BatchException extends RuntimeException
     private $result;
 
     /**
-     * @param BatchResult $result
+     * @var \SplObjectStorage
      */
-    public function __construct(BatchResult $result)
+    private $exceptions;
+
+    public function __construct()
     {
-        $this->result = $result;
+        $this->exceptions = new \SplObjectStorage();
     }
 
     /**
-     * Returns a list BatchResult which contains succesful responses and exceptions for failed requests.
+     * Returns a list BatchResult which contains succesful responses
      *
      * @return BatchResult
      */
     public function getResult()
     {
         return $this->result;
+    }
+
+    /**
+     * Sets the successful response list
+     *
+     * @param BatchResult $result
+     *
+     * @internal
+     */
+    public function setResult(BatchResult $result)
+    {
+        $this->result = $result;
+    }
+
+    /**
+     * Checks if a request is successful
+     *
+     * @param RequestInterface $request
+     *
+     * @return boolean
+     */
+    public function isSuccessful(RequestInterface $request)
+    {
+        return isset($this->result) && $this->result->hasResponseFor($request);
+    }
+
+    /**
+     * Checks if a request is failed
+     *
+     * @param RequestInterface $request
+     *
+     * @return boolean
+     */
+    public function isFailed(RequestInterface $request)
+    {
+        return $this->exceptions->contains($request);
+    }
+
+    /**
+     * Returns all exceptions
+     *
+     * @return Exception[]
+     */
+    public function getExceptions()
+    {
+        $exceptions = [];
+
+        foreach ($this->exceptions as $request) {
+            $exceptions[] = $this->exceptions[$request];
+        }
+
+        return $exceptions;
+    }
+
+    /**
+     * Returns an exception for a request or null if not found
+     *
+     * @param RequestInterface $request
+     *
+     * @return Exception|null
+     */
+    public function getExceptionFor(RequestInterface $request)
+    {
+        if ($this->exceptions->contains($request)) {
+            return $this->exceptions[$request];
+        }
+    }
+
+    /**
+     * Checks if there are any exceptions at all
+     *
+     * @return boolean
+     */
+    public function hasExceptions()
+    {
+        return $this->exceptions->count() > 0;
+    }
+
+    /**
+     * Checks if there is an exception for a request
+     *
+     * @param RequestInterface $request
+     *
+     * @return boolean
+     */
+    public function hasExceptionFor(RequestInterface $request)
+    {
+        return $this->exceptions->contains($request);
+    }
+
+    /**
+     * Adds an exception
+     *
+     * @param RequestInterface  $request
+     * @param Exception         $exception
+     */
+    public function addException(RequestInterface $request, Exception $exception)
+    {
+        $this->exceptions->attach($request, $exception);
     }
 }
