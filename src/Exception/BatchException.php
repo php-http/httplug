@@ -111,15 +111,15 @@ final class BatchException extends RuntimeException
      *
      * @return Exception
      *
-     * @throws InvalidArgumentException
+     * @throws UnexpectedValueException
      */
     public function getExceptionFor(RequestInterface $request)
     {
-        if (!$this->exceptions->contains($request)) {
-            throw new InvalidArgumentException('No exception can be found for the given request');
+        try {
+            return $this->exceptions[$request];
+        } catch (\UnexpectedValueException $e) {
+            throw new UnexpectedValueException('Request not found', $e->getCode(), $e);
         }
-
-        return $this->exceptions[$request];
     }
 
     /**

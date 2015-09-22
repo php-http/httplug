@@ -2,7 +2,7 @@
 
 namespace Http\Client;
 
-use Http\Client\Exception\InvalidArgumentException;
+use Http\Client\Exception\UnexpectedValueException;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
 
@@ -46,15 +46,15 @@ final class BatchResult
      *
      * @return ResponseInterface
      *
-     * @throws InvalidArgumentException
+     * @throws UnexpectedValueException
      */
     public function getResponseFor(RequestInterface $request)
     {
-        if (!$this->responses->contains($request)) {
-            throw new InvalidArgumentException('No response can be found for the given request');
+        try {
+            return $this->responses[$request];
+        } catch (\UnexpectedValueException $e) {
+            throw new UnexpectedValueException('Request not found', $e->getCode(), $e);
         }
-
-        return $this->responses[$request];
     }
 
     /**

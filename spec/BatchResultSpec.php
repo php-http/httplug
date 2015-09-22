@@ -36,7 +36,7 @@ class BatchResultSpec extends ObjectBehavior
     {
         $new = $this->addResponse($request, $response);
 
-        $this->shouldThrow('Http\Client\Exception\InvalidArgumentException')->duringGetResponseFor($request);
+        $this->shouldThrow('Http\Client\Exception\UnexpectedValueException')->duringGetResponseFor($request);
         $this->hasResponseFor($request)->shouldReturn(false);
         $new->getResponseFor($request)->shouldReturn($response);
         $new->hasResponseFor($request)->shouldReturn(true);
