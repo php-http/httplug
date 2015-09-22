@@ -23,7 +23,7 @@ final class BatchException extends RuntimeException
     }
 
     /**
-     * Returns successful responses or null
+     * Returns a list BatchResult which contains succesful responses and exceptions for failed requests.
      *
      * @return BatchResult
      */
