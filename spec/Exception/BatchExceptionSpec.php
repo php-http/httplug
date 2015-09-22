@@ -45,12 +45,10 @@ class BatchExceptionSpec extends ObjectBehavior
 
     function it_has_exceptions(RequestInterface $request, Exception $exception)
     {
-        $this->hasExceptions()->shouldReturn(false);
         $this->getExceptions()->shouldReturn([]);
 
         $this->addException($request, $exception);
 
-        $this->hasExceptions()->shouldReturn(true);
         $this->getExceptions()->shouldReturn([$exception]);
     }
 

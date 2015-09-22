@@ -119,16 +119,6 @@ final class BatchException extends RuntimeException
     }
 
     /**
-     * Checks if there are any exceptions at all
-     *
-     * @return boolean
-     */
-    public function hasExceptions()
-    {
-        return $this->exceptions->count() > 0;
-    }
-
-    /**
      * Checks if there is an exception for a request
      *
      * @param RequestInterface $request
