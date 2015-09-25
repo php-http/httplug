@@ -28,9 +28,6 @@ before_install:
 install:
   - travis_retry composer update ${COMPOSER_FLAGS} --prefer-source --no-interaction
 
-before_script:
-  - vendor/bin/http_test_server > /dev/null 2>&1 &
-
 script:
   - $TEST_COMMAND
 
