@@ -9,6 +9,6 @@ use Http\Client\Exception;
  *
  * @author Márk Sági-Kazár <mark.sagikazar@gmail.com>
  */
-class UnexpectedValueException extends \UnexpectedValueException implements Exception
+final class UnexpectedValueException extends \UnexpectedValueException implements Exception
 {
 }

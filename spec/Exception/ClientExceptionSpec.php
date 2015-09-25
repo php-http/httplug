@@ -20,7 +20,7 @@ class ClientExceptionSpec extends ObjectBehavior
         $this->shouldHaveType('Http\Client\Exception\ClientException');
     }
 
-    function it_is_http_exception()
+    function it_is_an_http_exception()
     {
         $this->shouldHaveType('Http\Client\Exception\HttpException');
     }

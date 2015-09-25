@@ -13,7 +13,7 @@ use Psr\Http\Message\RequestInterface;
  *
 *@author Márk Sági-Kazár <mark.sagikazar@gmail.com>
  */
-final class BatchException extends RuntimeException
+final class BatchException extends \RuntimeException implements Exception
 {
     /**
      * @var BatchResult
