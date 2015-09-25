@@ -9,6 +9,6 @@ use Http\Client\Exception;
  *
  * @author Márk Sági-Kazár <mark.sagikazar@gmail.com>
  */
-class RuntimeException extends \RuntimeException implements Exception
+final class RuntimeException extends \RuntimeException implements Exception
 {
 }

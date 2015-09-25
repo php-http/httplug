@@ -9,6 +9,6 @@ use Http\Client\Exception;
  *
  * @author Márk Sági-Kazár <mark.sagikazar@gmail.com>
  */
-class InvalidArgumentException extends \InvalidArgumentException implements Exception
+final class InvalidArgumentException extends \InvalidArgumentException implements Exception
 {
 }

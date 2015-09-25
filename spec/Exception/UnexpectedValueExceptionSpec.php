@@ -11,12 +11,12 @@ class UnexpectedValueExceptionSpec extends ObjectBehavior
         $this->shouldHaveType('Http\Client\Exception\UnexpectedValueException');
     }
 
-    function it_is_invalid_argument_exception()
+    function it_is_an_unexpected_value_exception()
     {
         $this->shouldHaveType('UnexpectedValueException');
     }
 
-    function it_is_exception()
+    function it_is_an_exception()
     {
         $this->shouldImplement('Http\Client\Exception');
     }

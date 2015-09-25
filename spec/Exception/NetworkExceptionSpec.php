@@ -17,7 +17,7 @@ class NetworkExceptionSpec extends ObjectBehavior
         $this->shouldHaveType('Http\Client\Exception\NetworkException');
     }
 
-    function it_is_request_exception()
+    function it_is_a_request_exception()
     {
         $this->shouldHaveType('Http\Client\Exception\RequestException');
     }

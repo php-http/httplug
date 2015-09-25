@@ -11,12 +11,12 @@ class InvalidArgumentExceptionSpec extends ObjectBehavior
         $this->shouldHaveType('Http\Client\Exception\InvalidArgumentException');
     }
 
-    function it_is_invalid_argument_exception()
+    function it_is_an_invalid_argument_exception()
     {
         $this->shouldHaveType('InvalidArgumentException');
     }
 
-    function it_is_exception()
+    function it_is_an_exception()
     {
         $this->shouldImplement('Http\Client\Exception');
     }

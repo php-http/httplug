@@ -11,4 +11,14 @@ class TransferExceptionSpec extends ObjectBehavior
     {
         $this->shouldHaveType('Http\Client\Exception\TransferException');
     }
+
+    function it_is_a_runtime_exception()
+    {
+        $this->shouldHaveType('RuntimeException');
+    }
+
+    function it_is_an_exception()
+    {
+        $this->shouldImplement('Http\Client\Exception');
+    }
 }

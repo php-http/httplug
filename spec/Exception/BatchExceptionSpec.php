@@ -14,10 +14,14 @@ class BatchExceptionSpec extends ObjectBehavior
         $this->shouldHaveType('Http\Client\Exception\BatchException');
     }
 
+    function it_is_a_runtime_exception()
+    {
+        $this->shouldHaveType('RuntimeException');
+    }
+
     function it_is_an_exception()
     {
         $this->shouldImplement('Http\Client\Exception');
-        $this->shouldHaveType('Exception');
     }
 
     function it_has_a_result()

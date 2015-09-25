@@ -18,6 +18,11 @@ class RequestExceptionSpec extends ObjectBehavior
         $this->shouldHaveType('Http\Client\Exception\RequestException');
     }
 
+    function it_is_a_transfer_exception()
+    {
+        $this->shouldHaveType('Http\Client\Exception\TransferException');
+    }
+
     function it_has_a_request(RequestInterface $request)
     {
         $this->getRequest()->shouldReturn($request);
