@@ -57,30 +57,19 @@ class HttpException extends RequestException
      *
      * @return HttpException
      */
-    public static function create(RequestInterface $request, ResponseInterface $response, \Exception $previous = null)
-    {
-        $code = $response->getStatusCode();
-
-        if ($code >= 400 && $code < 500) {
-            $message = 'Client error';
-            $className = __NAMESPACE__ . '\\ClientException';
-        } elseif ($code >= 500 && $code < 600) {
-            $message = 'Server error';
-            $className = __NAMESPACE__ . '\\ServerException';
-        } else {
-            $message = 'Unsuccessful response';
-            $className = __CLASS__;
-        }
-
+    public static function create(
+        RequestInterface $request,
+        ResponseInterface $response,
+        \Exception $previous = null
+    ) {
         $message = sprintf(
-            '%s [url] %s [http method] %s [status code] %s [reason phrase] %s',
-            $message,
+            '[url] %s [http method] %s [status code] %s [reason phrase] %s',
             $request->getRequestTarget(),
             $request->getMethod(),
             $response->getStatusCode(),
             $response->getReasonPhrase()
         );
 
-        return new $className($message, $request, $response, $previous);
+        return new self($message, $request, $response, $previous);
     }
 }

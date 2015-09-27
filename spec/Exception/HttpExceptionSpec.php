@@ -30,32 +30,6 @@ class HttpExceptionSpec extends ObjectBehavior
         $this->getResponse()->shouldReturn($response);
     }
 
-    function it_creates_a_client_exception(RequestInterface $request, ResponseInterface $response)
-    {
-        $request->getRequestTarget()->willReturn('/uri');
-        $request->getMethod()->willReturn('GET');
-        $response->getStatusCode()->willReturn(404);
-        $response->getReasonPhrase()->willReturn('Not Found');
-
-        $e = $this->create($request, $response);
-
-        $e->shouldHaveType('Http\Client\Exception\ClientException');
-        $e->getMessage()->shouldReturn('Client error [url] /uri [http method] GET [status code] 404 [reason phrase] Not Found');
-    }
-
-    function it_creates_a_server_exception(RequestInterface $request, ResponseInterface $response)
-    {
-        $request->getRequestTarget()->willReturn('/uri');
-        $request->getMethod()->willReturn('GET');
-        $response->getStatusCode()->willReturn(500);
-        $response->getReasonPhrase()->willReturn('Internal Server Error');
-
-        $e = $this->create($request, $response);
-
-        $e->shouldHaveType('Http\Client\Exception\ServerException');
-        $e->getMessage()->shouldReturn('Server error [url] /uri [http method] GET [status code] 500 [reason phrase] Internal Server Error');
-    }
-
     function it_creates_an_http_exception(RequestInterface $request, ResponseInterface $response)
     {
         $request->getRequestTarget()->willReturn('/uri');
@@ -66,6 +40,6 @@ class HttpExceptionSpec extends ObjectBehavior
         $e = $this->create($request, $response);
 
         $e->shouldHaveType('Http\Client\Exception\HttpException');
-        $e->getMessage()->shouldReturn('Unsuccessful response [url] /uri [http method] GET [status code] 100 [reason phrase] Continue');
+        $e->getMessage()->shouldReturn('[url] /uri [http method] GET [status code] 100 [reason phrase] Continue');
     }
 }
