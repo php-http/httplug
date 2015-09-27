@@ -57,10 +57,10 @@ interface HttpMethodsClient
     /**
      * Sends a POST request
      *
-     * @param string|UriInterface              $uri
-     * @param array                            $headers
-     * @param string|Body|StreamInterface|null $body
-     * @param array                            $options
+     * @param string|UriInterface         $uri
+     * @param array                       $headers
+     * @param string|StreamInterface|null $body
+     * @param array                       $options
      *
      * @throws Exception
      *
@@ -71,10 +71,10 @@ interface HttpMethodsClient
     /**
      * Sends a PUT request
      *
-     * @param string|UriInterface              $uri
-     * @param array                            $headers
-     * @param string|Body|StreamInterface|null $body
-     * @param array                            $options
+     * @param string|UriInterface         $uri
+     * @param array                       $headers
+     * @param string|StreamInterface|null $body
+     * @param array                       $options
      *
      * @throws Exception
      *
@@ -85,10 +85,10 @@ interface HttpMethodsClient
     /**
      * Sends a PATCH request
      *
-     * @param string|UriInterface              $uri
-     * @param array                            $headers
-     * @param string|Body|StreamInterface|null $body
-     * @param array                            $options
+     * @param string|UriInterface         $uri
+     * @param array                       $headers
+     * @param string|StreamInterface|null $body
+     * @param array                       $options
      *
      * @throws Exception
      *
@@ -99,10 +99,10 @@ interface HttpMethodsClient
     /**
      * Sends a DELETE request
      *
-     * @param string|UriInterface              $uri
-     * @param array                            $headers
-     * @param string|Body|StreamInterface|null $body
-     * @param array                            $options
+     * @param string|UriInterface         $uri
+     * @param array                       $headers
+     * @param string|StreamInterface|null $body
+     * @param array                       $options
      *
      * @throws Exception
      *
@@ -113,10 +113,10 @@ interface HttpMethodsClient
     /**
      * Sends an OPTIONS request
      *
-     * @param string|UriInterface              $uri
-     * @param array                            $headers
-     * @param string|Body|StreamInterface|null $body
-     * @param array                            $options
+     * @param string|UriInterface         $uri
+     * @param array                       $headers
+     * @param string|StreamInterface|null $body
+     * @param array                       $options
      *
      * @throws Exception
      *
@@ -127,11 +127,11 @@ interface HttpMethodsClient
     /**
      * Sends a request
      *
-     * @param string                           $method
-     * @param string|UriInterface              $uri
-     * @param array                            $headers
-     * @param string|Body|StreamInterface|null $body
-     * @param array                            $options
+     * @param string                      $method
+     * @param string|UriInterface         $uri
+     * @param array                       $headers
+     * @param string|StreamInterface|null $body
+     * @param array                       $options
      *
      * @throws Exception
      *
