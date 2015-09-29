@@ -14,20 +14,20 @@ use Psr\Http\Message\ResponseInterface;
 interface BatchResult
 {
     /**
-     * Returns all successful responses
+     * Returns all successful responses.
      *
      * @return ResponseInterface[]
      */
     public function getResponses();
 
     /**
-     * Returns a response of a request
+     * Returns the response for a successful request.
      *
      * @param RequestInterface $request
      *
      * @return ResponseInterface
      *
-     * @throws \UnexpectedValueException If request is not found
+     * @throws \UnexpectedValueException If request was not part of the batch or failed.
      */
     public function getResponseFor(RequestInterface $request);
 
@@ -39,7 +39,7 @@ interface BatchResult
     public function hasResponses();
 
     /**
-     * Checks if there is a response of a request
+     * Checks if there is a successful response for a request.
      *
      * @param RequestInterface $request
      *
@@ -48,17 +48,17 @@ interface BatchResult
     public function hasResponseFor(RequestInterface $request);
 
     /**
-     * Adds a response in an immutable way
+     * Adds a response in an immutable way.
      *
      * @param RequestInterface  $request
      * @param ResponseInterface $response
      *
-     * @return BatchResult
+     * @return BatchResult the new BatchResult with this request-response pair added to it.
      */
     public function addResponse(RequestInterface $request, ResponseInterface $response);
 
     /**
-     * Checks if a request is successful
+     * Checks if a request was successful.
      *
      * @param RequestInterface $request
      *
@@ -67,7 +67,7 @@ interface BatchResult
     public function isSuccessful(RequestInterface $request);
 
     /**
-     * Checks if a request is failed
+     * Checks if a request has failed.
      *
      * @param RequestInterface $request
      *
@@ -76,25 +76,25 @@ interface BatchResult
     public function isFailed(RequestInterface $request);
 
     /**
-     * Returns all exceptions
+     * Returns all exceptions for the unsuccessful requests.
      *
      * @return Exception[]
      */
     public function getExceptions();
 
     /**
-     * Returns an exception for a request
+     * Returns the exception for a failed request.
      *
      * @param RequestInterface $request
      *
      * @return Exception
      *
-     * @throws \UnexpectedValueException If request is not found
+     * @throws \UnexpectedValueException If request was not part of the batch or was successful.
      */
     public function getExceptionFor(RequestInterface $request);
 
     /**
-     * Checks if there is an exception for a request
+     * Checks if there is an exception for a request.
      *
      * @param RequestInterface $request
      *
@@ -103,12 +103,12 @@ interface BatchResult
     public function hasExceptionFor(RequestInterface $request);
 
     /**
-     * Adds an exception
+     * Adds an exception in an immutable way.
      *
      * @param RequestInterface  $request
      * @param Exception         $exception
      *
-     * @return BatchResult
+     * @return BatchResult the new BatchResult with this request-exception pair added to it.
      */
     public function addException(RequestInterface $request, Exception $exception);
 }
