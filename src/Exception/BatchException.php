@@ -36,11 +36,13 @@ final class BatchException extends \RuntimeException implements Exception
      * Note that the BatchResult may contains 0 responses if all requests failed.
      *
      * @return BatchResult
+     *
+     * @throws \RuntimeException If the BatchResult is not available
      */
     public function getResult()
     {
         if (!isset($this->result)) {
-            $this->result = new BatchResult();
+            throw new \RuntimeException('BatchResult is not available');
         }
 
         return $this->result;
@@ -51,14 +53,14 @@ final class BatchException extends \RuntimeException implements Exception
      *
      * @param BatchResult $result
      *
-     * @throws InvalidArgumentException If the BatchResult is already set
+     * @throws \RuntimeException If the BatchResult is already set
      *
      * @internal
      */
     public function setResult(BatchResult $result)
     {
         if (isset($this->result)) {
-            throw new InvalidArgumentException('BatchResult is already set');
+            throw new \RuntimeException('BatchResult is already set');
         }
 
         $this->result = $result;
@@ -111,14 +113,14 @@ final class BatchException extends \RuntimeException implements Exception
      *
      * @return Exception
      *
-     * @throws UnexpectedValueException
+     * @throws \UnexpectedValueException If request is not found
      */
     public function getExceptionFor(RequestInterface $request)
     {
         try {
             return $this->exceptions[$request];
         } catch (\UnexpectedValueException $e) {
-            throw new UnexpectedValueException('Request not found', $e->getCode(), $e);
+            throw new \UnexpectedValueException('Request not found', $e->getCode(), $e);
         }
     }
 

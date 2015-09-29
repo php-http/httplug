@@ -24,21 +24,22 @@ class BatchExceptionSpec extends ObjectBehavior
         $this->shouldImplement('Http\Client\Exception');
     }
 
-    function it_has_a_result()
+    function it_throws_an_exception_if_the_result_is_not_available()
     {
-        $this->setResult($result = new BatchResult());
-        $this->getResult()->shouldReturn($result);
+        $this->shouldThrow('RuntimeException')->duringGetResult();
     }
 
-    function it_throws_an_exception_if_the_result_is_already_set()
+    function it_throws_an_exception_if_the_result_is_already_set(BatchResult $batchResult)
     {
+        $this->setResult($batchResult);
+
         $this->getResult()->shouldHaveType('Http\Client\BatchResult');
-        $this->shouldThrow('Http\Client\Exception\InvalidArgumentException')->duringSetResult(new BatchResult());
+        $this->shouldThrow('RuntimeException')->duringSetResult($batchResult);
     }
 
     function it_has_an_exception_for_a_request(RequestInterface $request, Exception $exception)
     {
-        $this->shouldThrow('Http\Client\Exception\UnexpectedValueException')->duringGetExceptionFor($request);
+        $this->shouldThrow('UnexpectedValueException')->duringGetExceptionFor($request);
         $this->hasExceptionFor($request)->shouldReturn(false);
 
         $this->addException($request, $exception);
@@ -56,8 +57,11 @@ class BatchExceptionSpec extends ObjectBehavior
         $this->getExceptions()->shouldReturn([$exception]);
     }
 
-    function it_checks_if_a_request_failed(RequestInterface $request, Exception $exception)
+    function it_checks_if_a_request_failed(RequestInterface $request, Exception $exception, BatchResult $batchResult)
     {
+        $batchResult->hasResponseFor($request)->willReturn(false);
+        $this->setResult($batchResult);
+
         $this->isSuccessful($request)->shouldReturn(false);
         $this->isFailed($request)->shouldReturn(false);
 

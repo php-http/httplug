@@ -2,7 +2,7 @@
 
 namespace Http\Client;
 
-use Http\Client\Exception\UnexpectedValueException;
+use Http\Client\Exception;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
 
@@ -11,33 +11,14 @@ use Psr\Http\Message\ResponseInterface;
  *
  * @author Márk Sági-Kazár <mark.sagikazar@gmail.com>
  */
-final class BatchResult
+interface BatchResult
 {
-    /**
-     * @var \SplObjectStorage
-     */
-    private $responses;
-
-    public function __construct()
-    {
-        $this->responses = new \SplObjectStorage();
-    }
-
     /**
      * Returns all successful responses
      *
      * @return ResponseInterface[]
      */
-    public function getResponses()
-    {
-        $responses = [];
-
-        foreach ($this->responses as $request) {
-            $responses[] = $this->responses[$request];
-        }
-
-        return $responses;
-    }
+    public function getResponses();
 
     /**
      * Returns a response of a request
@@ -46,26 +27,16 @@ final class BatchResult
      *
      * @return ResponseInterface
      *
-     * @throws UnexpectedValueException
+     * @throws \UnexpectedValueException If request is not found
      */
-    public function getResponseFor(RequestInterface $request)
-    {
-        try {
-            return $this->responses[$request];
-        } catch (\UnexpectedValueException $e) {
-            throw new UnexpectedValueException('Request not found', $e->getCode(), $e);
-        }
-    }
+    public function getResponseFor(RequestInterface $request);
 
     /**
      * Checks if there are any successful responses at all
      *
      * @return boolean
      */
-    public function hasResponses()
-    {
-        return $this->responses->count() > 0;
-    }
+    public function hasResponses();
 
     /**
      * Checks if there is a response of a request
@@ -74,10 +45,7 @@ final class BatchResult
      *
      * @return ResponseInterface
      */
-    public function hasResponseFor(RequestInterface $request)
-    {
-        return $this->responses->contains($request);
-    }
+    public function hasResponseFor(RequestInterface $request);
 
     /**
      * Adds a response in an immutable way
@@ -89,16 +57,5 @@ final class BatchResult
      *
      * @internal
      */
-    public function addResponse(RequestInterface $request, ResponseInterface $response)
-    {
-        $new = clone $this;
-        $new->responses->attach($request, $response);
-
-        return $new;
-    }
-
-    public function __clone()
-    {
-        $this->responses = clone $this->responses;
-    }
+    public function addResponse(RequestInterface $request, ResponseInterface $response);
 }
