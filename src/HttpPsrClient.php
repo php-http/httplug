@@ -9,6 +9,14 @@ use Psr\Http\Message\ResponseInterface;
 /**
  * Sends one or more PSR-7 Request
  *
+ * Implementations should be configured in their constructor. For runtime behaviour changes, there
+ * is an $options parameter. It SHOULD be validated by the client and an exception thrown if
+ * unknown options are passed.
+ * Option that must be accepted by every client implementation (though it is free to ignore them
+ * if the underlying implementation does not support the option):
+ *
+ *   - timeout (int): the timeout for the HTTP request in seconds. 0 means to use the default.
+ *
  * @author GeLo <geloen.eric@gmail.com>
  */
 interface HttpPsrClient
