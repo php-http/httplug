@@ -1,6 +1,6 @@
 {
-    "name": "php-http/client",
-    "description": "HTTP Client interfaces",
+    "name": "php-http/httplug",
+    "description": "HTTPlug, the HTTP client abstraction for PHP",
     "license": "MIT",
     "keywords": ["http", "client"],
     "homepage": "http://php-http.org",
@@ -33,7 +33,7 @@
     },
     "extra": {
         "branch-alias": {
-            "dev-master": "0.2-dev"
+            "dev-master": "1.0-dev"
         }
     }
 }
