@@ -1,15 +1,15 @@
-# HTTP Client
+# HTTPlug
 
-[![Latest Version](https://img.shields.io/github/release/php-http/client.svg?style=flat-square)](https://github.com/php-http/client/releases)
+[![Latest Version](https://img.shields.io/github/release/php-http/httplug.svg?style=flat-square)](https://github.com/php-http/httplug/releases)
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE)
-[![Build Status](https://img.shields.io/travis/php-http/client.svg?style=flat-square)](https://travis-ci.org/php-http/client)
-[![Code Coverage](https://img.shields.io/scrutinizer/coverage/g/php-http/client.svg?style=flat-square)](https://scrutinizer-ci.com/g/php-http/client)
-[![Quality Score](https://img.shields.io/scrutinizer/g/php-http/client.svg?style=flat-square)](https://scrutinizer-ci.com/g/php-http/client)
-[![Total Downloads](https://img.shields.io/packagist/dt/php-http/client.svg?style=flat-square)](https://packagist.org/packages/php-http/client)
+[![Build Status](https://img.shields.io/travis/php-http/httplug.svg?style=flat-square)](https://travis-ci.org/php-http/httplug)
+[![Code Coverage](https://img.shields.io/scrutinizer/coverage/g/php-http/httplug.svg?style=flat-square)](https://scrutinizer-ci.com/g/php-http/httplug)
+[![Quality Score](https://img.shields.io/scrutinizer/g/php-http/httplug.svg?style=flat-square)](https://scrutinizer-ci.com/g/php-http/httplug)
+[![Total Downloads](https://img.shields.io/packagist/dt/php-http/httplug.svg?style=flat-square)](https://packagist.org/packages/php-http/httplug)
 
-[![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/php-http/adapter?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+[![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/php-http/httplug?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
-**HTTP Client interfaces.**
+**HTTPlug, the HTTP client abstraction for PHP.**
 
 
 ## Install
@@ -17,17 +17,13 @@
 Via Composer
 
 ``` bash
-$ composer require php-http/client
+$ composer require php-http/httplug
 ```
 
 
-## Usage
+## Intro
 
-This is the contract package for HTTP Client interfacess. PSR-7 does not contain Client interfaces which is fine. However there is still need for HTTP Client interoperability.
-
-These interfaces are mostly used to create adapter packages around existing HTTP Client implementations.
-
-There is also a virtual package which is versioned together with this contract package: [php-http/client-implementation](https://packagist.org/providers/php-http/client-implementation).
+This is the contract package for HTTP Client. Use it to create HTTP Clients which are interoperable and compatible with [PSR-7](http://www.php-fig.org/psr/psr-7/).
 
 
 ## Documentation
