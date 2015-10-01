@@ -17,56 +17,56 @@ class HttpMethodsSpec extends ObjectBehavior
     {
         $data = HttpMethodsStub::$requestData;
 
-        $this->get($data['uri'], $data['headers'], $data['options'])->shouldReturn(true);
+        $this->get($data['uri'], $data['headers'])->shouldReturn(true);
     }
 
     function it_sends_a_head_request()
     {
         $data = HttpMethodsStub::$requestData;
 
-        $this->head($data['uri'], $data['headers'], $data['options'])->shouldReturn(true);
+        $this->head($data['uri'], $data['headers'])->shouldReturn(true);
     }
 
     function it_sends_a_trace_request()
     {
         $data = HttpMethodsStub::$requestData;
 
-        $this->trace($data['uri'], $data['headers'], $data['options'])->shouldReturn(true);
+        $this->trace($data['uri'], $data['headers'])->shouldReturn(true);
     }
 
     function it_sends_a_post_request()
     {
         $data = HttpMethodsStub::$requestData;
 
-        $this->post($data['uri'], $data['headers'], $data['body'], $data['options'])->shouldReturn(true);
+        $this->post($data['uri'], $data['headers'], $data['body'])->shouldReturn(true);
     }
 
     function it_sends_a_put_request()
     {
         $data = HttpMethodsStub::$requestData;
 
-        $this->put($data['uri'], $data['headers'], $data['body'], $data['options'])->shouldReturn(true);
+        $this->put($data['uri'], $data['headers'], $data['body'])->shouldReturn(true);
     }
 
     function it_sends_a_patch_request()
     {
         $data = HttpMethodsStub::$requestData;
 
-        $this->patch($data['uri'], $data['headers'], $data['body'], $data['options'])->shouldReturn(true);
+        $this->patch($data['uri'], $data['headers'], $data['body'])->shouldReturn(true);
     }
 
     function it_sends_a_delete_request()
     {
         $data = HttpMethodsStub::$requestData;
 
-        $this->delete($data['uri'], $data['headers'], $data['body'], $data['options'])->shouldReturn(true);
+        $this->delete($data['uri'], $data['headers'], $data['body'])->shouldReturn(true);
     }
 
     function it_sends_a_options_request()
     {
         $data = HttpMethodsStub::$requestData;
 
-        $this->options($data['uri'], $data['headers'], $data['body'], $data['options'])->shouldReturn(true);
+        $this->options($data['uri'], $data['headers'], $data['body'])->shouldReturn(true);
     }
 }
 
@@ -80,9 +80,6 @@ class HttpMethodsStub implements HttpMethodsClient
             'Content-Type' => 'text/plain',
         ],
         'body'    => 'body',
-        'options' => [
-            'timeout' => 60,
-        ],
     ];
 
     /**
@@ -93,14 +90,12 @@ class HttpMethodsStub implements HttpMethodsClient
         if (in_array($method, ['GET', 'HEAD', 'TRACE'])) {
             return $uri === self::$requestData['uri'] &&
             $headers === self::$requestData['headers'] &&
-            is_null($body) &&
-            $options === self::$requestData['options'];
+            is_null($body);
         }
 
         return in_array($method, ['POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS']) &&
         $uri === self::$requestData['uri'] &&
         $headers === self::$requestData['headers'] &&
-        $body === self::$requestData['body'] &&
-        $options === self::$requestData['options'];
+        $body === self::$requestData['body'];
     }
 }

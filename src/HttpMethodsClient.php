@@ -11,14 +11,6 @@ use Psr\Http\Message\ResponseInterface;
  *
  * Use this interface when you do not have PSR-7 RequestInterface instances available.
  *
- * Implementations should be configured in their constructor. For runtime behaviour changes, there
- * is an $options parameter. It SHOULD be validated by the client and an exception thrown if
- * unknown options are passed.
- * Option that must be accepted by every client implementation (though it is free to ignore them
- * if the underlying implementation does not support the option):
- *
- *   - timeout (int): the timeout for the HTTP request in seconds. 0 means to use the default.
- *
  * @author Márk Sági-Kazár mark.sagikazar@gmail.com>
  */
 interface HttpMethodsClient
@@ -28,39 +20,36 @@ interface HttpMethodsClient
      *
      * @param string|UriInterface $uri
      * @param array               $headers
-     * @param array               $options
      *
      * @throws Exception
      *
      * @return ResponseInterface
      */
-    public function get($uri, array $headers = [], array $options = []);
+    public function get($uri, array $headers = []);
 
     /**
      * Sends an HEAD request
      *
      * @param string|UriInterface $uri
      * @param array               $headers
-     * @param array               $options
      *
      * @throws Exception
      *
      * @return ResponseInterface
      */
-    public function head($uri, array $headers = [], array $options = []);
+    public function head($uri, array $headers = []);
 
     /**
      * Sends a TRACE request
      *
      * @param string|UriInterface $uri
      * @param array               $headers
-     * @param array               $options
      *
      * @throws Exception
      *
      * @return ResponseInterface
      */
-    public function trace($uri, array $headers = [], array $options = []);
+    public function trace($uri, array $headers = []);
 
     /**
      * Sends a POST request
@@ -68,13 +57,12 @@ interface HttpMethodsClient
      * @param string|UriInterface              $uri
      * @param array                            $headers
      * @param string|Body|StreamInterface|null $body
-     * @param array                            $options
      *
      * @throws Exception
      *
      * @return ResponseInterface
      */
-    public function post($uri, array $headers = [], $body = null, array $options = []);
+    public function post($uri, array $headers = [], $body = null);
 
     /**
      * Sends a PUT request
@@ -82,13 +70,12 @@ interface HttpMethodsClient
      * @param string|UriInterface              $uri
      * @param array                            $headers
      * @param string|Body|StreamInterface|null $body
-     * @param array                            $options
      *
      * @throws Exception
      *
      * @return ResponseInterface
      */
-    public function put($uri, array $headers = [], $body = null, array $options = []);
+    public function put($uri, array $headers = [], $body = null);
 
     /**
      * Sends a PATCH request
@@ -96,13 +83,12 @@ interface HttpMethodsClient
      * @param string|UriInterface              $uri
      * @param array                            $headers
      * @param string|Body|StreamInterface|null $body
-     * @param array                            $options
      *
      * @throws Exception
      *
      * @return ResponseInterface
      */
-    public function patch($uri, array $headers = [], $body = null, array $options = []);
+    public function patch($uri, array $headers = [], $body = null);
 
     /**
      * Sends a DELETE request
@@ -110,13 +96,12 @@ interface HttpMethodsClient
      * @param string|UriInterface              $uri
      * @param array                            $headers
      * @param string|Body|StreamInterface|null $body
-     * @param array                            $options
      *
      * @throws Exception
      *
      * @return ResponseInterface
      */
-    public function delete($uri, array $headers = [], $body = null, array $options = []);
+    public function delete($uri, array $headers = [], $body = null);
 
     /**
      * Sends an OPTIONS request
@@ -124,13 +109,12 @@ interface HttpMethodsClient
      * @param string|UriInterface              $uri
      * @param array                            $headers
      * @param string|Body|StreamInterface|null $body
-     * @param array                            $options
      *
      * @throws Exception
      *
      * @return ResponseInterface
      */
-    public function options($uri, array $headers = [], $body = null, array $options = []);
+    public function options($uri, array $headers = [], $body = null);
 
     /**
      * Sends a request
@@ -139,11 +123,10 @@ interface HttpMethodsClient
      * @param string|UriInterface              $uri
      * @param array                            $headers
      * @param string|Body|StreamInterface|null $body
-     * @param array                            $options
      *
      * @throws Exception
      *
      * @return ResponseInterface
      */
-    public function send($method, $uri, array $headers = [], $body = null, array $options = []);
+    public function send($method, $uri, array $headers = [], $body = null);
 }
