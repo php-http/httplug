@@ -19,10 +19,7 @@ matrix:
   fast_finish: true
   include:
     - php: 5.4
-      env:
-        - COMPOSER_FLAGS="--prefer-stable --prefer-lowest"
-        - COVERAGE=true
-        - TEST_COMMAND="composer test-ci"
+      env: COMPOSER_FLAGS="--prefer-stable --prefer-lowest" COVERAGE=true TEST_COMMAND="composer test-ci"
 
 before_install:
   - travis_retry composer self-update
