@@ -92,3 +92,9 @@ you must follow these rules.
 We are trying to follow [semver](http://semver.org/). When you are making BC breaking changes,
 please let us know why you think it is important.
 In this case, your patch can only be included in the next major version.
+
+
+## Code of Conduct
+
+This project is released with a [Contributor Code of Conduct](CONDUCT.md).
+By participating in this project you agree to abide by its terms.
