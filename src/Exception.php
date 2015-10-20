@@ -9,5 +9,4 @@ namespace Http\Client;
  */
 interface Exception
 {
-
 }
