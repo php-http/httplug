@@ -15,7 +15,9 @@ please be as precise as possible. Here is a little list of required information:
 
 ## Security issues
 
-If you discover any security related issues, please contact us at [security@php-http.org](mailto:security@php-http.org) instead of submitting an issue on Github. This allows us to fix the issue and release a security hotfix without publicly disclosing the vulnerability.
+If you discover any security related issues, please contact us at [security@php-http.org](mailto:security@php-http.org)
+instead of submitting an issue on Github.
+This allows us to fix the issue and release a security hotfix without publicly disclosing the vulnerability.
 
 
 ## Feature requests
@@ -28,7 +30,8 @@ easily understood/implement it.
 
 ## Sending a Pull Request
 
-If you're here, you are going to fix a bug or implement a feature and you're the best! To do it, first fork the repository, clone it and create a new branch with the following commands:
+If you're here, you are going to fix a bug or implement a feature and you're the best!
+To do it, first fork the repository, clone it and create a new branch with the following commands:
 
 ``` bash
 $ git clone git@github.com:your-name/repo-name.git
@@ -41,7 +44,8 @@ Then install the dependencies through [Composer](https://getcomposer.org/):
 $ composer install
 ```
 
-Write code and tests. When you are ready, run the tests. (This is usually [PHPUnit](http://phpunit.de/) or [PHPSpec](http://phpspec.net/))
+Write code and tests. When you are ready, run the tests.
+(This is usually [PHPUnit](http://phpunit.de/) or [PHPSpec](http://phpspec.net/))
 
 ``` bash
 $ composer test
@@ -54,11 +58,15 @@ $ git commit -m "Feature or bug fix description"
 $ git push origin feature-or-bug-fix-description
 ```
 
-**Note:** Please write your commit messages in the imperative and follow the [guidelines](http://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html) for clear and concise messages.
+**Note:** Please write your commit messages in the imperative and follow the
+[guidelines](http://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html) for clear and concise messages.
 
 Then [create a pull request](https://help.github.com/articles/creating-a-pull-request/) on GitHub.
 
-Please make sure that each individual commit in your pull request is meaningful. If you had to make multiple intermediate commits while developing, please squash them before submitting with the following commands (here, we assume you would like to squash 3 commits in a single one):
+Please make sure that each individual commit in your pull request is meaningful.
+If you had to make multiple intermediate commits while developing,
+please squash them before submitting with the following commands
+(here, we assume you would like to squash 3 commits in a single one):
 
 ``` bash
 $ git rebase -i HEAD~3
@@ -81,4 +89,6 @@ you must follow these rules.
 
 ## Semver
 
-We are trying to follow [semver](http://semver.org/). When you are making BC breaking changes, please let us know why you think it is important. In this case, your patch can only be included in the next major version.
+We are trying to follow [semver](http://semver.org/). When you are making BC breaking changes,
+please let us know why you think it is important.
+In this case, your patch can only be included in the next major version.

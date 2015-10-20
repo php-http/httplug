@@ -23,7 +23,8 @@ $ composer require php-http/httplug
 
 ## Intro
 
-This is the contract package for HTTP Client. Use it to create HTTP Clients which are interoperable and compatible with [PSR-7](http://www.php-fig.org/psr/psr-7/).
+This is the contract package for HTTP Client.
+Use it to create HTTP Clients which are interoperable and compatible with [PSR-7](http://www.php-fig.org/psr/psr-7/).
 
 
 ## Documentation
