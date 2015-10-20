@@ -25,6 +25,7 @@ $ composer require php-http/httplug
 
 This is the contract package for HTTP Client. Use it to create HTTP Clients which are interoperable and compatible with [PSR-7](http://www.php-fig.org/psr/psr-7/).
 
+This library is the official successor of the [ivory http adapter](https://github.com/egeloen/ivory-http-adapter).
 
 ## Documentation
 
