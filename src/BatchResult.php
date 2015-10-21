@@ -2,103 +2,113 @@
 
 namespace Http\Client;
 
-use Http\Client\Exception\UnexpectedValueException;
+use Http\Client\Exception;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
 
 /**
- * Successful responses returned from parallel request execution
+ * Responses and exceptions returned from parallel request execution
  *
  * @author Márk Sági-Kazár <mark.sagikazar@gmail.com>
  */
-final class BatchResult
+interface BatchResult
 {
     /**
-     * @var \SplObjectStorage
-     */
-    private $responses;
-
-    public function __construct()
-    {
-        $this->responses = new \SplObjectStorage();
-    }
-
-    /**
-     * Returns all successful responses
+     * Returns all successful responses.
      *
      * @return ResponseInterface[]
      */
-    public function getResponses()
-    {
-        $responses = [];
-
-        foreach ($this->responses as $request) {
-            $responses[] = $this->responses[$request];
-        }
-
-        return $responses;
-    }
+    public function getResponses();
 
     /**
-     * Returns a response of a request
+     * Returns the response for a successful request.
      *
      * @param RequestInterface $request
      *
      * @return ResponseInterface
      *
-     * @throws UnexpectedValueException
+     * @throws \UnexpectedValueException If request was not part of the batch or failed.
      */
-    public function getResponseFor(RequestInterface $request)
-    {
-        try {
-            return $this->responses[$request];
-        } catch (\UnexpectedValueException $e) {
-            throw new UnexpectedValueException('Request not found', $e->getCode(), $e);
-        }
-    }
+    public function getResponseFor(RequestInterface $request);
 
     /**
      * Checks if there are any successful responses at all
      *
      * @return boolean
      */
-    public function hasResponses()
-    {
-        return $this->responses->count() > 0;
-    }
+    public function hasResponses();
 
     /**
-     * Checks if there is a response of a request
+     * Checks if there is a successful response for a request.
      *
      * @param RequestInterface $request
      *
      * @return ResponseInterface
      */
-    public function hasResponseFor(RequestInterface $request)
-    {
-        return $this->responses->contains($request);
-    }
+    public function hasResponseFor(RequestInterface $request);
 
     /**
-     * Adds a response in an immutable way
+     * Adds a response in an immutable way.
      *
      * @param RequestInterface  $request
      * @param ResponseInterface $response
      *
-     * @return BatchResult
-     *
-     * @internal
+     * @return BatchResult the new BatchResult with this request-response pair added to it.
      */
-    public function addResponse(RequestInterface $request, ResponseInterface $response)
-    {
-        $new = clone $this;
-        $new->responses->attach($request, $response);
+    public function addResponse(RequestInterface $request, ResponseInterface $response);
 
-        return $new;
-    }
+    /**
+     * Checks if a request was successful.
+     *
+     * @param RequestInterface $request
+     *
+     * @return boolean
+     */
+    public function isSuccessful(RequestInterface $request);
 
-    public function __clone()
-    {
-        $this->responses = clone $this->responses;
-    }
+    /**
+     * Checks if a request has failed.
+     *
+     * @param RequestInterface $request
+     *
+     * @return boolean
+     */
+    public function isFailed(RequestInterface $request);
+
+    /**
+     * Returns all exceptions for the unsuccessful requests.
+     *
+     * @return Exception[]
+     */
+    public function getExceptions();
+
+    /**
+     * Returns the exception for a failed request.
+     *
+     * @param RequestInterface $request
+     *
+     * @return Exception
+     *
+     * @throws \UnexpectedValueException If request was not part of the batch or was successful.
+     */
+    public function getExceptionFor(RequestInterface $request);
+
+    /**
+     * Checks if there is an exception for a request.
+     *
+     * @param RequestInterface $request
+     *
+     * @return boolean
+     */
+    public function hasExceptionFor(RequestInterface $request);
+
+    /**
+     * Adds an exception in an immutable way.
+     *
+     * @param RequestInterface  $request
+     * @param Exception         $exception
+     *
+     * @return BatchResult the new BatchResult with this request-exception pair added to it.
+     */
+    public function addException(RequestInterface $request, Exception $exception);
 }

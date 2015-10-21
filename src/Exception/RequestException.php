@@ -7,8 +7,6 @@ use Psr\Http\Message\RequestInterface;
 /**
  * Base exception for when a request failed.
  *
- * This can be because of network problems or the status code of the response.
- *
  * @author Márk Sági-Kazár <mark.sagikazar@gmail.com>
  */
 class RequestException extends TransferException
