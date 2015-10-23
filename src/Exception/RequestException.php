@@ -5,7 +5,10 @@ namespace Http\Client\Exception;
 use Psr\Http\Message\RequestInterface;
 
 /**
- * Base exception for when a request failed.
+ * Exception for when a request failed, providing access to the failed request.
+ *
+ * This could be due to an invalid request, or one of the extending exceptions
+ * for network errors or HTTP error responses.
  *
  * @author Márk Sági-Kazár <mark.sagikazar@gmail.com>
  */
@@ -36,20 +39,5 @@ class RequestException extends TransferException
     public function getRequest()
     {
         return $this->request;
-    }
-
-    /**
-     * @param RequestInterface $request
-     * @param \Exception       $e
-     *
-     * @return RequestException
-     */
-    public static function wrapException(RequestInterface $request, \Exception $e)
-    {
-        if (!$e instanceof RequestException) {
-            $e = new RequestException($e->getMessage(), $request, $e);
-        }
-
-        return $e;
     }
 }

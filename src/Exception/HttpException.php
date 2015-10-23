@@ -8,7 +8,7 @@ use Psr\Http\Message\ResponseInterface;
 /**
  * Thrown when a response was received but has an error status code.
  *
- * This exception always provides the request and response objects.
+ * In addition to the request, this exception always provides access to the response object.
  *
  * @author Márk Sági-Kazár <mark.sagikazar@gmail.com>
  */
@@ -31,11 +31,10 @@ class HttpException extends RequestException
         ResponseInterface $response,
         \Exception $previous = null
     ) {
+        parent::__construct($message, $request, $previous);
+
         $this->response = $response;
         $this->code = $response->getStatusCode();
-
-
-        parent::__construct($message, $request, $previous);
     }
 
     /**
