@@ -2,14 +2,14 @@
 
 namespace spec\Http\Client\Exception;
 
+use Http\Client\Exception\TransferException;
 use PhpSpec\ObjectBehavior;
-use Prophecy\Argument;
 
 class TransferExceptionSpec extends ObjectBehavior
 {
-    function it_is_initializable()
+    function let()
     {
-        $this->shouldHaveType('Http\Client\Exception\TransferException');
+        $this->beAnInstanceOf('spec\Http\Client\Exception\TransferExceptionStub');
     }
 
     function it_is_a_runtime_exception()
@@ -21,4 +21,8 @@ class TransferExceptionSpec extends ObjectBehavior
     {
         $this->shouldImplement('Http\Client\Exception');
     }
+}
+
+class TransferExceptionStub extends TransferException
+{
 }

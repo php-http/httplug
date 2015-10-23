@@ -27,18 +27,4 @@ class RequestExceptionSpec extends ObjectBehavior
     {
         $this->getRequest()->shouldReturn($request);
     }
-
-    function it_wraps_an_exception(RequestInterface $request)
-    {
-        $e = new \Exception('message');
-
-        $requestException = $this->wrapException($request, $e);
-
-        $requestException->getMessage()->shouldReturn('message');
-    }
-
-    function it_does_not_wrap_if_request_exception(RequestInterface $request, RequestException $requestException)
-    {
-        $this->wrapException($request, $requestException)->shouldReturn($requestException);
-    }
 }

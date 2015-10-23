@@ -9,6 +9,6 @@ use Http\Client\Exception;
  *
  * @author Márk Sági-Kazár <mark.sagikazar@gmail.com>
  */
-class TransferException extends \RuntimeException implements Exception
+abstract class TransferException extends \RuntimeException implements Exception
 {
 }
