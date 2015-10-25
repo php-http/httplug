@@ -2,7 +2,6 @@
 
 namespace Http\Client;
 
-use Http\Client\Exception\BatchException;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
 
