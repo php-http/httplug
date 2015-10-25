@@ -18,5 +18,5 @@ interface Promise
      *
      * @return Promise Always returns a new promise which is resolved with value of the executed callback (onFulfilled / onRejected)
      */
-    public function then(callable $onFulfilled = null, callable $onRejected = null);
+    public function then(callable $onFulfilled, callable $onRejected);
 }
