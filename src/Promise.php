@@ -8,6 +8,10 @@ use Psr\Http\Message\ResponseInterface;
  * Promise represents a response that may not be available yet, but will be resolved at some point in future.
  * It acts like a proxy to the actual response.
  *
+ * This interface is an extension of the promises/a+ specification https://promisesaplus.com/
+ * Value is replaced by an object where its class implement a Psr\Http\Message\RequestInterface.
+ * Reason is replaced by an object where its class implement a Http\Client\Exception.
+ *
  * @author Joel Wurtz <joel.wurtz@gmail.com>
  */
 interface Promise
