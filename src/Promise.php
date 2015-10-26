@@ -44,7 +44,7 @@ interface Promise
      *
      * @param callable $onFulfilled Called when a response will be available.
      *
-     * It will receive a Psr\Http\Message\RequestInterface object as the first argument
+     * It will receive a Psr\Http\Message\ResponseInterface object as the first argument
      * If the callback is null it must not be called.
      * It must be called after promise is fulfilled, with promise’s value (ResponseInterface) as its first argument.
      * It must not be called before promise is fulfilled.
