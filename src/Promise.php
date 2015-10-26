@@ -20,12 +20,12 @@ interface Promise
      * @param callable $onFulfilled Called when a response will be available.
      *
      * It will receive a Psr\Http\Message\RequestInterface object as the first argument
-     * If the callback is null it should not be called.
+     * If the callback is null it must not be called.
      *
      * @param callable $onRejected  Called when an error happens.
      *
      * It will receive a Http\Client\Exception object as the first argument.
-     * If the callback is null it should not be called.
+     * If the callback is null it must not be called.
      *
      * @return Promise Always returns a new promise which is resolved with value of the executed callback (onFulfilled / onRejected)
      */
