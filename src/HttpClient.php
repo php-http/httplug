@@ -7,7 +7,7 @@ use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
 
 /**
- * Sends one or more PSR-7 Request and returns PSR-7 responses.
+ * Sends a PSR-7 Request and returns a PSR-7 response.
  *
  * @author GeLo <geloen.eric@gmail.com>
  * @author Márk Sági-Kazár <mark.sagikazar@gmail.com>
