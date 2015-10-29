@@ -18,47 +18,29 @@ interface Promise
 {
     /**
      * Pending state, promise has not been fulfilled or rejected.
-     *
-     * When pending, a promise may transition to either the fulfilled or rejected state.
      */
     const PENDING   = 0;
 
     /**
      * Fulfilled state, promise has been fulfilled with a ResponseInterface object.
-     *
-     * When fulfilled, a promise must not transition to any other state.
-     * When fulfilled, a promise must have a value, which must not change.
      */
     const FULFILLED = 1;
 
     /**
      * Rejected state, promise has been rejected with an Exception object.
-     *
-     * When rejected, a promise must not transition to any other state.
-     * When rejected, a promise must have a reason, which must not change.
      */
     const REJECTED  = 2;
 
     /**
-     * Add behavior for when the promise is resolved or rejected (response will be available, or error happens)
+     * Add behavior for when the promise is resolved or rejected (response will be available, or error happens).
      *
      * @param callable $onFulfilled Called when a response will be available.
-     *
-     * It will receive a Psr\Http\Message\ResponseInterface object as the first argument
-     * If the callback is null it must not be called.
-     * It must be called after promise is fulfilled, with promise’s value (ResponseInterface) as its first argument.
-     * It must not be called before promise is fulfilled.
-     * It must not be called more than once.
-     *
      * @param callable $onRejected Called when an error happens.
      *
-     * It will receive a Http\Client\Exception object as the first argument.
-     * If the callback is null it must not be called.
-     * It must be called after promise is rejected, with promise’s reason (Exception) as its first argument.
-     * It must not be called before promise is rejected.
-     * It must not be called more than once.
+     * If you do not care about one of the cases, you can set the corresponding callable to null
+     * The callback will be called when the response or exception arrived and never more than once.
      *
-     * @return Promise Always returns a new promise which is resolved with value of the executed callback (onFulfilled / onRejected)
+     * @return Promise Always returns a new promise which is resolved with value of the executed callback (onFulfilled / onRejected).
      */
     public function then(callable $onFulfilled = null, callable $onRejected = null);
 
@@ -70,16 +52,20 @@ interface Promise
     public function getState();
 
     /**
-     * Return the value of the promise (fulfilled)
+     * Return the value of the promise (fulfilled).
      *
-     * @return null|ResponseInterface Null if the promise is rejected or pending, the response object otherwise
+     * @throws \LogicException When the promise is not fulfilled.
+     *
+     * @return ResponseInterface Response Object only when the Promise is fulfilled.
      */
     public function getResponse();
 
     /**
-     * Return the reason of the promise (rejected)
+     * Return the reason of the promise (rejected).
      *
-     * @return null|Exception Null if the promise is fulfilled or pending, the exception object otherwise
+     * @throws \LogicException When the promise is not rejected.
+     *
+     * @return Exception Exception Object only when the Promise is rejected.
      */
     public function getError();
 }
