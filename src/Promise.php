@@ -19,26 +19,28 @@ interface Promise
     /**
      * Pending state, promise has not been fulfilled or rejected.
      */
-    const PENDING   = 0;
+    const PENDING   = "pending";
 
     /**
      * Fulfilled state, promise has been fulfilled with a ResponseInterface object.
      */
-    const FULFILLED = 1;
+    const FULFILLED = "fulfilled";
 
     /**
      * Rejected state, promise has been rejected with an Exception object.
      */
-    const REJECTED  = 2;
+    const REJECTED  = "rejected";
 
     /**
      * Add behavior for when the promise is resolved or rejected (response will be available, or error happens).
      *
+     * If you do not care about one of the cases, you can set the corresponding callable to null
+     * The callback will be called when the response or exception arrived and never more than once.
+     *
      * @param callable $onFulfilled Called when a response will be available.
      * @param callable $onRejected Called when an error happens.
      *
-     * If you do not care about one of the cases, you can set the corresponding callable to null
-     * The callback will be called when the response or exception arrived and never more than once.
+     * You must always return the Response in the interface or throw an Exception.
      *
      * @return Promise Always returns a new promise which is resolved with value of the executed callback (onFulfilled / onRejected).
      */
@@ -68,4 +70,13 @@ interface Promise
      * @return Exception Exception Object only when the Promise is rejected.
      */
     public function getError();
+
+    /**
+     * Wait for the promise to be fulfilled or rejected.
+     *
+     * This function does not return a result, it simply wait for response or error
+     * of the request to be available, change the state of the promise and call one
+     * of the then callable.
+     */
+    public function wait();
 }
