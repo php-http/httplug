@@ -38,7 +38,7 @@ interface Promise
      * The callback will be called when the response or exception arrived and never more than once.
      *
      * @param callable $onFulfilled Called when a response will be available.
-     * @param callable $onRejected Called when an error happens.
+     * @param callable $onRejected  Called when an error happens.
      *
      * You must always return the Response in the interface or throw an Exception.
      *
@@ -56,27 +56,28 @@ interface Promise
     /**
      * Return the value of the promise (fulfilled).
      *
-     * @throws \LogicException When the promise is not fulfilled.
-     *
      * @return ResponseInterface Response Object only when the Promise is fulfilled.
+     *
+     * @throws \LogicException When the promise is not fulfilled.
      */
     public function getResponse();
 
     /**
      * Return the reason of the promise (rejected).
      *
-     * @throws \LogicException When the promise is not rejected.
-     *
      * @return Exception Exception Object only when the Promise is rejected.
+     *
+     * If the exception is an instance of Http\Client\Exception\HttpException it will contain
+     * the response object with the status code and the http reason.
+     *
+     * @throws \LogicException When the promise is not rejected.
      */
-    public function getError();
+    public function getException();
 
     /**
      * Wait for the promise to be fulfilled or rejected.
      *
-     * This function does not return a result, it simply wait for response or error
-     * of the request to be available, change the state of the promise and call one
-     * of the then callable.
+     * When this method returns, the request has been resolved and the appropriate callable has terminated.
      */
     public function wait();
 }
