@@ -28,6 +28,7 @@ Use it to create HTTP Clients which are interoperable and compatible with [PSR-7
 
 This library is the official successor of the [ivory http adapter](https://github.com/egeloen/ivory-http-adapter).
 
+
 ## Documentation
 
 Please see the [official documentation](http://php-http.readthedocs.org/en/latest/).
