@@ -3,7 +3,7 @@
     "description": "HTTPlug, the HTTP client abstraction for PHP",
     "license": "MIT",
     "keywords": ["http", "client"],
-    "homepage": "http://php-http.org",
+    "homepage": "http://httplug.io",
     "authors": [
         {
             "name": "Eric GELOEN",
