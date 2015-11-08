@@ -15,8 +15,8 @@ please be as precise as possible. Here is a little list of required information:
 
 ## Security issues
 
-If you discover any security related issues, please contact us at [security@php-http.org](mailto:security@php-http.org)
-instead of submitting an issue on Github.
+If you discover any security related issues, please contact us at [security@httplug.io](mailto:security@httplug.io)
+or [security@php-http.org](mailto:security@php-http.org) instead of submitting an issue on Github.
 This allows us to fix the issue and release a security hotfix without publicly disclosing the vulnerability.
 
 
