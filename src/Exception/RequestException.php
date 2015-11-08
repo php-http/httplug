@@ -32,7 +32,7 @@ class RequestException extends TransferException
     }
 
     /**
-     * Returns the request
+     * Returns the request.
      *
      * @return RequestInterface
      */

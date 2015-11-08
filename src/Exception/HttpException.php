@@ -6,7 +6,7 @@ use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
 
 /**
- * Thrown when a response was received but has an error status code.
+ * Thrown when a response was received but the request itself failed.
  *
  * In addition to the request, this exception always provides access to the response object.
  *
@@ -38,7 +38,7 @@ class HttpException extends RequestException
     }
 
     /**
-     * Returns the response
+     * Returns the response.
      *
      * @return ResponseInterface
      */
@@ -48,7 +48,7 @@ class HttpException extends RequestException
     }
 
     /**
-     * Factory method to create a new exception with a normalized error message
+     * Factory method to create a new exception with a normalized error message.
      *
      * @param RequestInterface  $request
      * @param ResponseInterface $response
