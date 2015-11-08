@@ -8,6 +8,7 @@
 [![Total Downloads](https://img.shields.io/packagist/dt/php-http/httplug.svg?style=flat-square)](https://packagist.org/packages/php-http/httplug)
 
 [![Slack Status](http://slack.httplug.io/badge.svg)](http://slack.httplug.io)
+[![Email](https://img.shields.io/badge/email-team@httplug.io-blue.svg?style=flat-square)](mailto:team@httplug.io)
 
 **HTTPlug, the HTTP client abstraction for PHP.**
 
@@ -31,7 +32,7 @@ This library is the official successor of the [ivory http adapter](https://githu
 
 ## Documentation
 
-Please see the [official documentation](http://php-http.readthedocs.org/en/latest/).
+Please see the [official documentation](http://docs.httplug.io).
 
 
 ## Testing
@@ -48,7 +49,8 @@ Please see [CONTRIBUTING](CONTRIBUTING.md) and [CONDUCT](CONDUCT.md) for details
 
 ## Security
 
-If you discover any security related issues, please contact us at [security@php-http.org](mailto:security@php-http.org).
+If you discover any security related issues, please contact us at [security@httplug.io](mailto:security@httplug.io)
+or [security@php-http.org](mailto:security@php-http.org).
 
 
 ## License
