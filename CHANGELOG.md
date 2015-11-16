@@ -1,7 +1,14 @@
 # Change Log
 
 
-## 1.0.0 - Unreleased
+## 1.0.0-alpha2 - UNRELEASED
+
+### Added
+
+- Async client and Promise interface
+
+
+## 1.0.0-alpha - 2015-10-26
 
 ### Added
 
