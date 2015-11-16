@@ -1,7 +1,7 @@
 # Change Log
 
 
-## 1.0.0-alpha2 - UNRELEASED
+## 1.0.0-alpha2 - 2015-11-16
 
 ### Added
 
