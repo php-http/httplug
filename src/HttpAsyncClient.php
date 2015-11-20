@@ -17,8 +17,6 @@ interface HttpAsyncClient
      * @param RequestInterface $request
      *
      * @return Promise
-     *
-     * @throws Exception
      */
     public function sendAsyncRequest(RequestInterface $request);
 }

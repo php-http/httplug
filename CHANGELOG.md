@@ -1,6 +1,13 @@
 # Change Log
 
 
+## Unreleased
+
+### Changed
+
+- Async client does not throw exceptions
+
+
 ## 1.0.0-alpha2 - 2015-11-16
 
 ### Added
