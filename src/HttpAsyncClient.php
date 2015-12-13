@@ -2,6 +2,7 @@
 
 namespace Http\Client;
 
+use Http\Promise\Promise;
 use Psr\Http\Message\RequestInterface;
 
 /**

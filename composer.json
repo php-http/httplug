@@ -16,10 +16,11 @@
     ],
     "require": {
         "php": ">=5.4",
-        "psr/http-message": "^1.0"
+        "psr/http-message": "^1.0",
+        "php-http/promise": "dev-master"
     },
     "require-dev": {
-        "phpspec/phpspec": "^2.4@dev",
+        "phpspec/phpspec": "^2.4",
         "henrikbjorn/phpspec-code-coverage" : "^1.0"
     },
     "autoload": {
