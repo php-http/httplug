@@ -1,11 +1,15 @@
 # Change Log
 
 
-## Unreleased
+## 1.0.0-alpha3 - 2015-12-13
 
 ### Changed
 
 - Async client does not throw exceptions
+
+### Removed
+
+- Promise interface moved to its own repository: [php-http/promise](https://github.com/php-http/promise)
 
 
 ## 1.0.0-alpha2 - 2015-11-16
