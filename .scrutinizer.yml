@@ -1,11 +1,8 @@
 filter:
-  paths: [src/*]
+    paths: [src/*]
 checks:
-  php:
-    code_rating: true
-    duplication: true
+    php:
+        code_rating: true
+        duplication: true
 tools:
-  external_code_coverage: true
-  php_code_sniffer:
-    config:
-      standard: "PSR2"
+    external_code_coverage: true
