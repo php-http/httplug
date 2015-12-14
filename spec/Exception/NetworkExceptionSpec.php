@@ -2,22 +2,22 @@
 
 namespace spec\Http\Client\Exception;
 
-use Psr\Http\Message\RequestInterface;
 use PhpSpec\ObjectBehavior;
+use Psr\Http\Message\RequestInterface;
 
 class NetworkExceptionSpec extends ObjectBehavior
 {
-    function let(RequestInterface $request)
+    public function let(RequestInterface $request)
     {
         $this->beConstructedWith('message', $request);
     }
 
-    function it_is_initializable()
+    public function it_is_initializable()
     {
         $this->shouldHaveType('Http\Client\Exception\NetworkException');
     }
 
-    function it_is_a_request_exception()
+    public function it_is_a_request_exception()
     {
         $this->shouldHaveType('Http\Client\Exception\RequestException');
     }

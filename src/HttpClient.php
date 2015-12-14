@@ -19,10 +19,10 @@ interface HttpClient
      *
      * @param RequestInterface $request
      *
-     * @return ResponseInterface
-     *
      * @throws Exception  If an error happens during processing the request.
      * @throws \Exception If processing the request is impossible (eg. bad configuration)
+     *
+     * @return ResponseInterface
      */
     public function sendRequest(RequestInterface $request);
 }
