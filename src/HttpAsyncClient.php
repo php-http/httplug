@@ -15,9 +15,13 @@ interface HttpAsyncClient
     /**
      * Sends a PSR-7 request in an asynchronous way.
      *
+     * Exceptions related to processing the request are available from the returned Promise.
+     *
      * @param RequestInterface $request
      *
      * @return Promise
+     *
+     * @throws \Exception If processing the request is impossible (eg. bad configuration).
      */
     public function sendAsyncRequest(RequestInterface $request);
 }
