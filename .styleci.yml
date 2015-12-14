@@ -9,6 +9,3 @@ finder:
 
 enabled:
     - short_array_syntax
-
-disabled:
-    - phpdoc_order # Preferred order: params, return, throws
