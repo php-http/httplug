@@ -22,7 +22,7 @@ interface HttpClient
      * @return ResponseInterface
      *
      * @throws Exception  If an error happens during processing the request.
-     * @throws \Exception If processing the request is impossible (eg. bad configuration)
+     * @throws \Exception If processing the request is impossible (eg. bad configuration).
      */
     public function sendRequest(RequestInterface $request);
 }
