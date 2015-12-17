@@ -1,5 +1,15 @@
 # Change Log
 
+## 1.0.0-beta - 2015-12-17
+
+### Added
+
+- Puli configuration and binding types
+
+### Improved
+
+- Exception concept
+
 
 ## 1.0.0-alpha3 - 2015-12-13
 
