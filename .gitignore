@@ -1,3 +1,4 @@
+.puli/
 build/
 vendor/
 composer.lock
