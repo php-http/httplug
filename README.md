@@ -44,7 +44,7 @@ $ composer test
 
 ## Contributing
 
-Please see [CONTRIBUTING](CONTRIBUTING.md) and [CONDUCT](CONDUCT.md) for details.
+Please see our [contributing guide](http://docs.php-http.org/en/latest/development/contributing.html).
 
 
 ## Security
