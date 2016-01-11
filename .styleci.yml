@@ -3,7 +3,6 @@ preset: symfony
 finder:
     exclude:
         - "spec"
-        - "tests"
     path:
         - "src"
 
