@@ -38,5 +38,5 @@
         }
     },
     "prefer-stable": true,
-    "minimum-stability": "rc"
+    "minimum-stability": "RC"
 }
