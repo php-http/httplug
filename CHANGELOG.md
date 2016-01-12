@@ -1,12 +1,21 @@
 # Change Log
 
+
+## 1.0.0-RC1 - 2016-01-12
+
+### Changed
+
+- Updated package files
+- Updated promise dependency to RC1
+
+
 ## 1.0.0-beta - 2015-12-17
 
 ### Added
 
 - Puli configuration and binding types
 
-### Improved
+### Changed
 
 - Exception concept
 
