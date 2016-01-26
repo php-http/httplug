@@ -1,6 +1,13 @@
 # Change Log
 
 
+## 1.0.0 - 2016-01-26
+
+### Removed
+
+- Stability configuration from composer
+
+
 ## 1.0.0-RC1 - 2016-01-12
 
 ### Changed
