@@ -32,7 +32,7 @@ This library is the official successor of the [ivory http adapter](https://githu
 
 ## Documentation
 
-Please see the [official documentation](http://docs.httplug.io).
+Please see the [official documentation](http://docs.php-http.org).
 
 
 ## Testing
