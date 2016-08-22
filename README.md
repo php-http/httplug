@@ -55,7 +55,6 @@ There are many libraries using HTTPlug some of the most known ones are found in 
 [foshttp_image]: https://avatars2.githubusercontent.com/u/529709?v=3&s=100
 [knplabs_image]: https://avatars3.githubusercontent.com/u/202732?v=3&s=100
 [sparkpost_image]: https://avatars3.githubusercontent.com/u/9406778?v=3&s=100
-[sparkpost_image]: https://avatars3.githubusercontent.com/u/9406778?v=3&s=100
 
 ## Testing
 
