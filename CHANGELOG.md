@@ -1,6 +1,6 @@
 # Change Log
 
-## 1.1.0 - Unreleased
+## 1.1.0 - 2016-08-31
 
 - Added HttpFulfilledPromise and HttpRejectedPromise which respect the HttpAsyncClient interface
 
