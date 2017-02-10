@@ -4,19 +4,18 @@ namespace Http\Client\Promise;
 
 use Http\Client\Exception;
 use Http\Promise\Promise;
-use Psr\Http\Message\ResponseInterface;
 
 final class HttpFulfilledPromise implements Promise
 {
     /**
-     * @var ResponseInterface
+     * @var mixed
      */
     private $response;
 
     /**
-     * @param ResponseInterface $response
+     * @param $response
      */
-    public function __construct(ResponseInterface $response)
+    public function __construct($response)
     {
         $this->response = $response;
     }
