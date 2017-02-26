@@ -1,5 +1,11 @@
 # Change Log
 
+## 1.1.1 - 2017-02-26
+
+### Changed
+
+- HttpFullfilledPromise to allow mixed parameter in constructor
+
 
 ## 1.1.0 - 2016-08-31
 

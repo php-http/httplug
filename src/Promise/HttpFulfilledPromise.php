@@ -9,14 +9,14 @@ use Psr\Http\Message\ResponseInterface;
 final class HttpFulfilledPromise implements Promise
 {
     /**
-     * @var ResponseInterface
+     * @var mixed
      */
     private $response;
 
     /**
-     * @param ResponseInterface $response
+     * @param mixed $response
      */
-    public function __construct(ResponseInterface $response)
+    public function __construct($response)
     {
         $this->response = $response;
     }
