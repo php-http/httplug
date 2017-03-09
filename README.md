@@ -29,11 +29,32 @@ Use it to create HTTP Clients which are interoperable and compatible with [PSR-7
 
 This library is the official successor of the [ivory http adapter](https://github.com/egeloen/ivory-http-adapter).
 
-
 ## Documentation
 
 Please see the [official documentation](http://docs.php-http.org).
 
+## Libraries using HTTPlug
+
+There are many libraries using HTTPlug some of the most known ones are found in the list below. 
+
+[![PHP Geocoder][geocoder_image]][geocoder]
+[![Mailgun][mailgun_image]][mailgun]
+[![FOSHttpCache][foshttp_image]][foshttp]
+[![KNPLabs Github Api][knplabs_image]][knplabs]
+[<img src="https://github.com/florianv/swap/raw/master/doc/logo.png" width="100px" />][swap]
+[![Sparkpost][sparkpost_image]][sparkpost]
+
+[geocoder]: https://github.com/geocoder-php/Geocoder
+[mailgun]: https://github.com/mailgun/mailgun-php
+[foshttp]: https://github.com/FriendsOfSymfony/FOSHttpCache
+[knplabs]: https://github.com/KnpLabs/php-github-api
+[swap]: https://github.com/florianv/swap
+[sparkpost]: https://github.com/SparkPost/php-sparkpost
+[geocoder_image]: https://avatars3.githubusercontent.com/u/5303359?v=3&s=100
+[mailgun_image]: https://avatars0.githubusercontent.com/u/447686?v=3&s=100
+[foshttp_image]: https://avatars2.githubusercontent.com/u/529709?v=3&s=100
+[knplabs_image]: https://avatars3.githubusercontent.com/u/202732?v=3&s=100
+[sparkpost_image]: https://avatars3.githubusercontent.com/u/9406778?v=3&s=100
 
 ## Testing
 
