@@ -31,7 +31,7 @@ matrix:
           dist: trusty
 
 before_install:
-    - if [[ $COVERAGE != true && $TRAVIS_PHP_VERSION != hhvm ]]; then phpenv config-rm xdebug.ini; fi
+    - if [[ $COVERAGE != true && $TRAVIS_PHP_VERSION != hhvm ]]; then phpenv config-rm xdebug.ini || true; fi
     - travis_retry composer self-update
 
 install:
