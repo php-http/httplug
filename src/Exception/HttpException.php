@@ -42,7 +42,7 @@ class HttpException extends RequestException
      *
      * @return ResponseInterface
      */
-    public function getResponse()
+    public function getResponse(): ResponseInterface
     {
         return $this->response;
     }
@@ -60,7 +60,7 @@ class HttpException extends RequestException
         RequestInterface $request,
         ResponseInterface $response,
         \Exception $previous = null
-    ) {
+    ): self {
         $message = sprintf(
             '[url] %s [http method] %s [status code] %s [reason phrase] %s',
             $request->getRequestTarget(),

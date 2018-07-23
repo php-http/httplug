@@ -2,6 +2,7 @@
 
 namespace Http\Client;
 
+use Http\HttplugBundle\Tests\Unit\Collector\ClientInterface;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
 
@@ -12,7 +13,7 @@ use Psr\Http\Message\ResponseInterface;
  * @author Márk Sági-Kazár <mark.sagikazar@gmail.com>
  * @author David Buchmann <mail@davidbu.ch>
  */
-interface HttpClient
+interface HttpClient extends ClientInterface
 {
     /**
      * Sends a PSR-7 request.
@@ -24,5 +25,5 @@ interface HttpClient
      * @throws \Http\Client\Exception If an error happens during processing the request.
      * @throws \Exception             If processing the request is impossible (eg. bad configuration).
      */
-    public function sendRequest(RequestInterface $request);
+    public function sendRequest(RequestInterface $request): ResponseInterface;
 }

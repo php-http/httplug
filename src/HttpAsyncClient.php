@@ -23,5 +23,5 @@ interface HttpAsyncClient
      *
      * @throws \Exception If processing the request is impossible (eg. bad configuration).
      */
-    public function sendAsyncRequest(RequestInterface $request);
+    public function sendAsyncRequest(RequestInterface $request): Promise;
 }
