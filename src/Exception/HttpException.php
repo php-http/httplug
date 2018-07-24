@@ -37,11 +37,6 @@ class HttpException extends RequestException
         $this->code = $response->getStatusCode();
     }
 
-    /**
-     * Returns the response.
-     *
-     * @return ResponseInterface
-     */
     public function getResponse(): ResponseInterface
     {
         return $this->response;
@@ -49,12 +44,6 @@ class HttpException extends RequestException
 
     /**
      * Factory method to create a new exception with a normalized error message.
-     *
-     * @param RequestInterface  $request
-     * @param ResponseInterface $response
-     * @param \Exception|null   $previous
-     *
-     * @return HttpException
      */
     public static function create(
         RequestInterface $request,

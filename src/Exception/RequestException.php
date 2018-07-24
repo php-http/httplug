@@ -31,11 +31,6 @@ class RequestException extends TransferException
         parent::__construct($message, 0, $previous);
     }
 
-    /**
-     * Returns the request.
-     *
-     * @return RequestInterface
-     */
     public function getRequest(): RequestInterface
     {
         return $this->request;
