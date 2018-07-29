@@ -12,7 +12,7 @@ use Psr\Http\Message\RequestInterface;
  *
  * @author Márk Sági-Kazár <mark.sagikazar@gmail.com>
  */
-class RequestException extends TransferException
+class RequestException extends TransferException implements \Psr\Http\Client\Exception\RequestException
 {
     /**
      * @var RequestInterface
@@ -31,12 +31,7 @@ class RequestException extends TransferException
         parent::__construct($message, 0, $previous);
     }
 
-    /**
-     * Returns the request.
-     *
-     * @return RequestInterface
-     */
-    public function getRequest()
+    public function getRequest(): RequestInterface
     {
         return $this->request;
     }
