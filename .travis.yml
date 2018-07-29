@@ -24,12 +24,9 @@ matrix:
     include:
         - php: 7.0
           env: COMPOSER_FLAGS="--prefer-stable --prefer-lowest" COVERAGE=true TEST_COMMAND="composer test-ci"
-        - php: hhvm
-          dist: trusty
 
 before_install:
-    - if [[ $COVERAGE != true && $TRAVIS_PHP_VERSION != hhvm ]]; then phpenv config-rm xdebug.ini || true; fi
-    - travis_retry composer self-update
+    - if [[ $COVERAGE != true ]]; then phpenv config-rm xdebug.ini || true; fi
 
 install:
     - travis_retry composer update ${COMPOSER_FLAGS} --prefer-dist --no-interaction
