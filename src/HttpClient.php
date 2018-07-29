@@ -2,7 +2,7 @@
 
 namespace Http\Client;
 
-use Http\HttplugBundle\Tests\Unit\Collector\ClientInterface;
+use Psr\Http\Client\ClientInterface;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
 
