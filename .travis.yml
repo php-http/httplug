@@ -22,7 +22,7 @@ branches:
 matrix:
     fast_finish: true
     include:
-        - php: 5.4
+        - php: 7.0
           env: COMPOSER_FLAGS="--prefer-stable --prefer-lowest" COVERAGE=true TEST_COMMAND="composer test-ci"
         - php: hhvm
           dist: trusty
