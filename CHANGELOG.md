@@ -2,12 +2,12 @@
 
 ## 2.0.0 - UNRELEASED
 
-This version contains is technically a BC break because we drop PHP5 and add return 
-type annotation to support `psr/http-client`. 
+This version is no BC break for consumers using HTTPlug. However, HTTP clients that
+implement HTTPlug need to adjust because we add return type declarations.
 
 ### Added
 
-- Support for PSR-18 (Http client).
+- Support for PSR-18 (HTTP client).
 
 ### Removed
 
@@ -15,7 +15,7 @@ type annotation to support `psr/http-client`.
 
 ### Changed
 
-- [BC Break] `HttpClient::sendRequest(RequestInterface $request)` has a return type annotation. The mew 
+- [BC Break] `HttpClient::sendRequest(RequestInterface $request)` has a return type annotation. The new 
 signature is `HttpClient::sendRequest(RequestInterface $request): ResponseInterface`.  
 - [BC Break] `RequestException::getRequest()` has a return type annotation. The new 
 signature is `RequestException::getRequest(): RequestInterface`.   
