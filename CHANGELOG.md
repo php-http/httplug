@@ -1,5 +1,24 @@
 # Change Log
 
+## 2.0.0 - UNRELEASED
+
+This version is no BC break for consumers using HTTPlug. However, HTTP clients that
+implement HTTPlug need to adjust because we add return type declarations.
+
+### Added
+
+- Support for PSR-18 (HTTP client).
+
+### Removed
+
+- PHP 5 support
+
+### Changed
+
+- [BC Break] `HttpClient::sendRequest(RequestInterface $request)` has a return type annotation. The new 
+signature is `HttpClient::sendRequest(RequestInterface $request): ResponseInterface`.  
+- [BC Break] `RequestException::getRequest()` has a return type annotation. The new 
+signature is `RequestException::getRequest(): RequestInterface`.   
 
 ## 1.1.0 - 2016-08-31
 
