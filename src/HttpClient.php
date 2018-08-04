@@ -3,7 +3,6 @@
 namespace Http\Client;
 
 use Psr\Http\Message\RequestInterface;
-// use Psr\Http\Message\ResponseInterface;
 
 /**
  * Sends a PSR-7 Request and returns a PSR-7 response.
@@ -19,7 +18,7 @@ interface HttpClient
      *
      * @param RequestInterface $request
      *
-     * @return ResponseInterface
+     * @return Psr\Http\Message\ResponseInterface
      *
      * @throws \Http\Client\Exception If an error happens during processing the request.
      * @throws \Exception             If processing the request is impossible (eg. bad configuration).
