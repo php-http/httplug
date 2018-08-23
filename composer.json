@@ -17,7 +17,7 @@
     "require": {
         "php": "^7.0",
         "psr/http-message": "^1.0",
-        "psr/http-client": "^0.1",
+        "psr/http-client": "^0.2",
         "php-http/promise": "^1.0"
     },
     "require-dev": {
