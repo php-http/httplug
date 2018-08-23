@@ -2,7 +2,7 @@
 
 namespace Http\Client\Exception;
 
-use Psr\Http\Client\Exception\NetworkException as PsrNetworkException;
+use Psr\Http\Client\NetworkException as PsrNetworkException;
 
 /**
  * Thrown when the request cannot be completed because of network issues.
