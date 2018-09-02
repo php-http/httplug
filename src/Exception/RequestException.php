@@ -3,7 +3,7 @@
 namespace Http\Client\Exception;
 
 use Psr\Http\Message\RequestInterface;
-use Psr\Http\Client\RequestException as PsrRequestException;
+use Psr\Http\Client\RequestExceptionInterface as PsrRequestException;
 
 /**
  * Exception for when a request failed, providing access to the failed request.
