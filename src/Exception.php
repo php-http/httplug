@@ -7,6 +7,6 @@ namespace Http\Client;
  *
  * @author Márk Sági-Kazár <mark.sagikazar@gmail.com>
  */
-interface Exception
+interface Exception extends \Throwable
 {
 }
