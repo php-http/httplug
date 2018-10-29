@@ -9,6 +9,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+
+## [2.0.0] - 2018-10-29
+
 This version is no BC break for consumers using HTTPlug. However, HTTP clients that
 implement HTTPlug need to adjust because we add return type declarations.
 
@@ -103,7 +106,8 @@ signature is `RequestException::getRequest(): RequestInterface`.
 - Initial release
 
 
-[Unreleased]: https://github.com/php-http/httplug/compare/v1.1.0...HEAD
+[Unreleased]: https://github.com/php-http/httplug/compare/v2.0.0...HEAD
+[2.0.0]: https://github.com/php-http/httplug/compare/v1.1.0...HEAD
 [1.1.0]: https://github.com/php-http/httplug/compare/v1.0.0...v1.1.0
 [1.0.0]: https://github.com/php-http/httplug/compare/v1.0.0-RC1...v1.0.0
 [1.0.0-RC1]: https://github.com/php-http/httplug/compare/v1.0.0-beta...v1.0.0-RC1
