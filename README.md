@@ -15,9 +15,13 @@
 
 ## Intro
 
-HTTPlug served as a reference is the predecessor of [PSR-18](https://github.com/php-fig/fig-standards/blob/master/accepted/http-client/http-client.md)
-HTTP Client standard. Since there is an entire ecosystem built around HTTPlug and since it's already widely adapted,
-this package stays available, but new implementations and consumers should use the PSR-18 interfaces.
+HTTPlug is the predecessor of [PSR-18](http://www.php-fig.org/psr/psr-18/)
+HTTP Client standard built on [PSR-7](http://www.php-fig.org/psr/psr-7/) HTTP messages.
+Since there is an entire ecosystem built around HTTPlug which is already widely adapted,
+we will keep maintaining this package for the time being,
+but new implementations and consumers should use the PSR-18 interfaces.
+HTTPlug 2.x extends the PSR-18 interfaces to allow a convenient migration path,
+but in time it may be completely replaced by the standard.
 
 This library is the official successor of the [ivory http adapter](https://github.com/egeloen/ivory-http-adapter).
 
