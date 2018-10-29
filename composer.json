@@ -32,10 +32,5 @@
     "scripts": {
         "test": "vendor/bin/phpspec run",
         "test-ci": "vendor/bin/phpspec run -c phpspec.ci.yml"
-    },
-    "extra": {
-        "branch-alias": {
-            "dev-2.x": "2.0.x-dev"
-        }
     }
 }
