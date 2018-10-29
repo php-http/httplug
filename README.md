@@ -17,7 +17,7 @@
 
 HTTPlug served as a reference is the predecessor of [PSR-18](https://github.com/php-fig/fig-standards/blob/master/accepted/http-client/http-client.md)
 HTTP Client standard. Since there is an entire ecosystem built around HTTPlug and since it's already widely adapted,
-this package stays available.
+this package stays available, but new implementations and consumers should use the PSR-18 interfaces.
 
 This library is the official successor of the [ivory http adapter](https://github.com/egeloen/ivory-http-adapter).
 
