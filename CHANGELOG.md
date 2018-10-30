@@ -10,7 +10,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [Unreleased]
 
 
-## [2.0.0] - 2018-10-29
+## [2.0.0] - 2018-10-31
 
 This version is no BC break for consumers using HTTPlug. However, HTTP clients that
 implement HTTPlug need to adjust because we add return type declarations.
