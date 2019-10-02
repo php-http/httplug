@@ -63,6 +63,6 @@ class HttpException extends RequestException
             $response->getReasonPhrase()
         );
 
-        return new self($message, $request, $response, $previous);
+        return new static($message, $request, $response, $previous);
     }
 }
