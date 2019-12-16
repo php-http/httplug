@@ -11,9 +11,6 @@ trait RequestAwareTrait
      */
     private $request;
 
-    /**
-     * @param \Psr\Http\Message\RequestInterface $request
-     */
     private function setRequest(RequestInterface $request)
     {
         $this->request = $request;
