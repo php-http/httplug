@@ -21,7 +21,7 @@
         "php-http/promise": "^1.0"
     },
     "require-dev": {
-        "phpspec/phpspec": "^4.3|^5.0|^6.0",
+        "phpspec/phpspec": "^4.3.4|^5.0|^6.0",
         "friends-of-phpspec/phpspec-code-coverage" : "^4.1"
     },
     "autoload": {
