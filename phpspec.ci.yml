@@ -4,7 +4,7 @@ suites:
         psr4_prefix: Http\Client
 formatter.name: pretty
 extensions:
-    - FriendsOfPhpSpec\PhpSpec\CodeCoverage\CodeCoverageExtension: ~
+    FriendsOfPhpSpec\PhpSpec\CodeCoverage\CodeCoverageExtension: ~
 code_coverage:
     format: clover
     output: build/coverage.xml
