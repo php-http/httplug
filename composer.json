@@ -22,7 +22,7 @@
     },
     "require-dev": {
         "phpspec/phpspec": "^4.0|^5.0|^6.0",
-        "henrikbjorn/phpspec-code-coverage" : "^1.0"
+        "friends-of-phpspec/phpspec-code-coverage" : "^4.1"
     },
     "autoload": {
         "psr-4": {
