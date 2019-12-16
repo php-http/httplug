@@ -7,7 +7,7 @@ use Psr\Http\Message\RequestInterface;
 trait RequestAwareTrait
 {
     /**
-     * @var \Psr\Http\Message\RequestInterface
+     * @var RequestInterface
      */
     private $request;
 
