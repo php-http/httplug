@@ -15,10 +15,7 @@ use Psr\Http\Client\RequestExceptionInterface as PsrRequestException;
  */
 class RequestException extends TransferException implements PsrRequestException
 {
-    /**
-     * @var RequestInterface
-     */
-    private $request;
+    use RequestAwareTrait;
 
     /**
      * @param string           $message
@@ -27,13 +24,8 @@ class RequestException extends TransferException implements PsrRequestException
      */
     public function __construct($message, RequestInterface $request, \Exception $previous = null)
     {
-        $this->request = $request;
+        $this->setRequest($request);
 
         parent::__construct($message, 0, $previous);
-    }
-
-    public function getRequest(): RequestInterface
-    {
-        return $this->request;
     }
 }
