@@ -16,7 +16,6 @@ jobs:
         uses: shivammathur/setup-php@1.6.2
         with:
           php-version: '7.0'
-          coverage: xdebug
 
       - name: Setup Problem Matchers for PHPUnit
         run: echo "::add-matcher::${{ runner.tool_cache }}/phpunit.json"
@@ -28,7 +27,7 @@ jobs:
         run: composer update --prefer-stable --prefer-dist --no-interaction --no-progress --no-suggest --prefer-lowest
 
       - name: Run tests
-        run: composer test-ci
+        run: composer test
 
   build:
     name: Build
