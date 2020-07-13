@@ -17,7 +17,7 @@ interface HttpAsyncClient
      *
      * Exceptions related to processing the request are available from the returned Promise.
      *
-     * @return Promise Resolves a PSR-7 Response or fails with an Http\Client\Exception.
+     * @return Promise resolves a PSR-7 Response or fails with an Http\Client\Exception
      *
      * @throws \Exception If processing the request is impossible (eg. bad configuration).
      */

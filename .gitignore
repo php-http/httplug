@@ -1,4 +1,5 @@
-/behat.yml
+.php_cs
+.php_cs.cache
 /build/
 /composer.lock
 /phpspec.yml
