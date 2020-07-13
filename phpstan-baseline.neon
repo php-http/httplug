@@ -1,0 +1,22 @@
+parameters:
+	ignoreErrors:
+		-
+			message: "#^Method Http\\\\Client\\\\Exception\\\\HttpException\\:\\:create\\(\\) has no return typehint specified\\.$#"
+			count: 1
+			path: src/Exception/HttpException.php
+
+		-
+			message: "#^Unsafe usage of new static\\(\\)\\.$#"
+			count: 1
+			path: src/Exception/HttpException.php
+
+		-
+			message: "#^Method Http\\\\Client\\\\Exception\\\\NetworkException\\:\\:setRequest\\(\\) has no return typehint specified\\.$#"
+			count: 1
+			path: src/Exception/NetworkException.php
+
+		-
+			message: "#^Method Http\\\\Client\\\\Exception\\\\RequestException\\:\\:setRequest\\(\\) has no return typehint specified\\.$#"
+			count: 1
+			path: src/Exception/RequestException.php
+
