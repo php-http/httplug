@@ -4,7 +4,6 @@ namespace Http\Client\Promise;
 
 use Http\Client\Exception;
 use Http\Promise\Promise;
-use Psr\Http\Message\ResponseInterface;
 
 final class HttpRejectedPromise implements Promise
 {
