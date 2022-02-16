@@ -4,6 +4,7 @@ namespace Http\Client\Promise;
 
 use Http\Client\Exception;
 use Http\Promise\Promise;
+use Psr\Http\Message\ResponseInterface;
 
 final class HttpRejectedPromise implements Promise
 {
@@ -27,7 +28,11 @@ final class HttpRejectedPromise implements Promise
         }
 
         try {
-            return new HttpFulfilledPromise($onRejected($this->exception));
+            $result = $onRejected($this->exception);
+            if ($result instanceof Promise) {
+                return $result;
+            }
+            return new HttpFulfilledPromise($result);
         } catch (Exception $e) {
             return new self($e);
         }
