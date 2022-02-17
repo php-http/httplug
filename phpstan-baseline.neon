@@ -1,7 +1,7 @@
 parameters:
 	ignoreErrors:
 		-
-			message: "#^Method Http\\\\Client\\\\Exception\\\\HttpException\\:\\:create\\(\\) has no return typehint specified\\.$#"
+			message: "#^Method Http\\\\Client\\\\Exception\\\\HttpException\\:\\:create\\(\\) has no return type specified\\.$#"
 			count: 1
 			path: src/Exception/HttpException.php
 
@@ -11,12 +11,11 @@ parameters:
 			path: src/Exception/HttpException.php
 
 		-
-			message: "#^Method Http\\\\Client\\\\Exception\\\\NetworkException\\:\\:setRequest\\(\\) has no return typehint specified\\.$#"
+			message: "#^Method Http\\\\Client\\\\Exception\\\\NetworkException\\:\\:setRequest\\(\\) has no return type specified\\.$#"
 			count: 1
 			path: src/Exception/NetworkException.php
 
 		-
-			message: "#^Method Http\\\\Client\\\\Exception\\\\RequestException\\:\\:setRequest\\(\\) has no return typehint specified\\.$#"
+			message: "#^Method Http\\\\Client\\\\Exception\\\\RequestException\\:\\:setRequest\\(\\) has no return type specified\\.$#"
 			count: 1
 			path: src/Exception/RequestException.php
-
