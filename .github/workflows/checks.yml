@@ -15,4 +15,4 @@ on:
         uses: actions/checkout@v2
 
       - name: Roave BC Check
-        uses: docker://nyholm/roave-bc-check-ga
+        uses: "docker://nyholm/roave-bc-check-ga" 
