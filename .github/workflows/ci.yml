@@ -2,6 +2,8 @@ name: CI
 
 on:
   push:
+    branches:
+      - master
   pull_request:
 
 jobs:
@@ -25,13 +27,13 @@ jobs:
 
       - name: Install PHP 7 dependencies
         run: composer update --prefer-dist --no-interaction --no-progress
-        if: "matrix.php != '8.0'"
+        if: "startsWith(matrix.php, '7.')"
 
       - name: Install PHP 8 dependencies
         run: |
           composer require "phpdocumentor/reflection-docblock:^5.2@dev" --no-interaction --no-update
           composer update --prefer-dist --prefer-stable --no-interaction --no-progress --ignore-platform-req=php
-        if: "matrix.php == '8.0'"
+        if: "startsWith(matrix.php, '8.')"
 
       - name: Execute tests
         run: composer test
@@ -41,7 +43,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        php: ['7.1', '7.2', '7.3', '7.4']
+        php: ['7.1', '7.4', '8.0']
 
     steps:
       - name: Checkout code
