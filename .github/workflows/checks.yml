@@ -6,6 +6,7 @@ on:
       - master
   pull_request:
 
+jobs:
   roave-bc-check:
     name: Roave BC Check
     runs-on: ubuntu-latest
@@ -15,4 +16,4 @@ on:
         uses: actions/checkout@v2
 
       - name: Roave BC Check
-        uses: docker://nyholm/roave-bc-check-ga
+        uses: "docker://nyholm/roave-bc-check-ga"
