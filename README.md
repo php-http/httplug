@@ -7,7 +7,6 @@
 [![Quality Score](https://img.shields.io/scrutinizer/g/php-http/httplug.svg?style=flat-square)](https://scrutinizer-ci.com/g/php-http/httplug)
 [![Total Downloads](https://img.shields.io/packagist/dt/php-http/httplug.svg?style=flat-square)](https://packagist.org/packages/php-http/httplug)
 
-[![Slack Status](http://slack.httplug.io/badge.svg)](http://slack.httplug.io)
 [![Email](https://img.shields.io/badge/email-team@httplug.io-blue.svg?style=flat-square)](mailto:team@httplug.io)
 
 **HTTPlug, the HTTP client abstraction for PHP.**
