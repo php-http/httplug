@@ -27,7 +27,12 @@ final class HttpRejectedPromise implements Promise
         }
 
         try {
-            return new HttpFulfilledPromise($onRejected($this->exception));
+            $result = $onRejected($this->exception);
+            if ($result instanceof Promise) {
+                return $result;
+            }
+
+            return new HttpFulfilledPromise($result);
         } catch (Exception $e) {
             return new self($e);
         }

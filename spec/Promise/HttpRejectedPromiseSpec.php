@@ -4,6 +4,7 @@ namespace spec\Http\Client\Promise;
 
 use Http\Client\Exception;
 use Http\Client\Exception\TransferException;
+use Http\Client\Promise\HttpFulfilledPromise;
 use Http\Promise\Promise;
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
@@ -86,5 +87,20 @@ class HttpRejectedPromiseSpec extends ObjectBehavior
         $this->shouldThrow('Exception')->duringThen(null, function () {
             throw new \Exception();
         });
+    }
+
+    function it_returns_a_promise_when_rejected(ResponseInterface $response)
+    {
+        $exception = new TransferException();
+        $this->beConstructedWith($exception);
+
+        $promise = $this->then(null, function (Exception $exceptionReceived) use($exception, $response) {
+            return new HttpFulfilledPromise($response->getWrappedObject());
+        });
+
+        $promise->shouldHaveType('Http\Promise\Promise');
+        $promise->shouldHaveType('Http\Client\Promise\HttpFulfilledPromise');
+        $promise->getState()->shouldReturn(Promise::FULFILLED);
+        $promise->wait()->shouldReturnAnInstanceOf('Psr\Http\Message\ResponseInterface');
     }
 }
