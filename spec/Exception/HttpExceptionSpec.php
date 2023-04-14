@@ -10,6 +10,8 @@ class HttpExceptionSpec extends ObjectBehavior
 {
     function let(RequestInterface $request, ResponseInterface $response)
     {
+        $response->getStatusCode()->willReturn(500);
+
         $this->beConstructedWith('message', $request, $response);
     }
 
