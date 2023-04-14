@@ -28,11 +28,6 @@
         "friends-of-phpspec/phpspec-code-coverage": "^4.1",
         "phpspec/phpspec": "^5.1 || ^6.0"
     },
-    "extra": {
-        "branch-alias": {
-            "dev-master": "2.x-dev"
-        }
-    },
     "autoload": {
         "psr-4": {
             "Http\\Client\\": "src/"

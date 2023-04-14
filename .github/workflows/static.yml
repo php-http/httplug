@@ -3,7 +3,7 @@ name: Static analysis
 on:
   push:
     branches:
-      - master
+      - '*.x'
   pull_request:
 
 jobs:
