@@ -4,6 +4,7 @@ namespace Http\Client;
 
 use Http\Promise\Promise;
 use Psr\Http\Message\RequestInterface;
+use Psr\Http\Message\ResponseInterface;
 
 /**
  * Sends a PSR-7 Request in an asynchronous way by returning a Promise.
@@ -17,7 +18,7 @@ interface HttpAsyncClient
      *
      * Exceptions related to processing the request are available from the returned Promise.
      *
-     * @return Promise resolves a PSR-7 Response or fails with an Http\Client\Exception
+     * @return Promise<ResponseInterface, Exception> resolves a PSR-7 Response or fails with an Http\Client\Exception
      *
      * @throws \Exception If processing the request is impossible (eg. bad configuration).
      */

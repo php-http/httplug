@@ -20,7 +20,7 @@
     ],
     "require": {
         "php": "^7.1 || ^8.0",
-        "php-http/promise": "^1.1",
+        "php-http/promise": "dev-template-exception as 1.2.2",
         "psr/http-client": "^1.0",
         "psr/http-message": "^1.0 || ^2.0"
     },
