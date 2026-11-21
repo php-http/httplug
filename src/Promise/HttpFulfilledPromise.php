@@ -18,6 +18,9 @@ final class HttpFulfilledPromise implements Promise
         $this->response = $response;
     }
 
+    /**
+     * @param (callable(ResponseInterface): ResponseInterface)|null $onFulfilled
+     */
     public function then(?callable $onFulfilled = null, ?callable $onRejected = null)
     {
         if (null === $onFulfilled) {
