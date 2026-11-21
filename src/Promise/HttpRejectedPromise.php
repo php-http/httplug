@@ -19,7 +19,6 @@ final class HttpRejectedPromise implements Promise
     }
 
     /**
-     * @param callable|null                                            $onFulfilled
      * @param (callable(Exception): (ResponseInterface|Promise))|null $onRejected
      */
     public function then(?callable $onFulfilled = null, ?callable $onRejected = null)

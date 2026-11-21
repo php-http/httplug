@@ -20,7 +20,6 @@ final class HttpFulfilledPromise implements Promise
 
     /**
      * @param (callable(ResponseInterface): ResponseInterface)|null $onFulfilled
-     * @param callable|null                                         $onRejected
      */
     public function then(?callable $onFulfilled = null, ?callable $onRejected = null)
     {
