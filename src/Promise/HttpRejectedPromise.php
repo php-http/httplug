@@ -4,6 +4,7 @@ namespace Http\Client\Promise;
 
 use Http\Client\Exception;
 use Http\Promise\Promise;
+use Psr\Http\Message\ResponseInterface;
 
 final class HttpRejectedPromise implements Promise
 {
@@ -17,6 +18,10 @@ final class HttpRejectedPromise implements Promise
         $this->exception = $exception;
     }
 
+    /**
+     * @param callable|null                                            $onFulfilled
+     * @param (callable(Exception): (ResponseInterface|Promise))|null $onRejected
+     */
     public function then(?callable $onFulfilled = null, ?callable $onRejected = null)
     {
         if (null === $onRejected) {
