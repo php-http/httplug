@@ -2,6 +2,7 @@
 .php-cs-fixer.cache
 /build/
 /composer.lock
-/phpspec.yml
 /phpunit.xml
+/.phpunit.cache/
+/.phpunit.result.cache
 /vendor/
