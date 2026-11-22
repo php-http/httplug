@@ -25,16 +25,20 @@
         "psr/http-message": "^1.0 || ^2.0"
     },
     "require-dev": {
-        "friends-of-phpspec/phpspec-code-coverage": "^4.1 || ^5.0 || ^6.0 || ^7.0",
-        "phpspec/phpspec": "^5.1 || ^6.0 || ^7.0 || ^8.3"
+        "phpunit/phpunit": "^7.5 || ^8.5 || ^9.6 || ^10.5 || ^11.5 || ^12.5"
     },
     "autoload": {
         "psr-4": {
             "Http\\Client\\": "src/"
         }
     },
+    "autoload-dev": {
+        "psr-4": {
+            "Http\\Client\\Tests\\": "tests/"
+        }
+    },
     "scripts": {
-        "test": "vendor/bin/phpspec run",
-        "test-ci": "vendor/bin/phpspec run -c phpspec.ci.yml"
+        "test": "vendor/bin/phpunit",
+        "test-ci": "vendor/bin/phpunit --coverage-filter src --coverage-clover build/coverage.xml"
     }
 }

@@ -11,6 +11,8 @@ use Psr\Http\Message\ResponseInterface;
  * In addition to the request, this exception always provides access to the response object.
  *
  * @author Márk Sági-Kazár <mark.sagikazar@gmail.com>
+ *
+ * @phpstan-consistent-constructor
  */
 class HttpException extends RequestException
 {
@@ -46,6 +48,8 @@ class HttpException extends RequestException
 
     /**
      * Factory method to create a new exception with a normalized error message.
+     *
+     * @return static
      */
     public static function create(
         RequestInterface $request,
